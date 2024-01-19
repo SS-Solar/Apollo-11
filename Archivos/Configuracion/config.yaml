@@ -1,0 +1,87 @@
+settings:
+  cantidad_max_archivos: 100
+  cantidad_min_archivos: 1
+  ciclo_simulacion: 10.0
+  estado_de_dispositivo:
+  - Excelent
+  - Good
+  - Warning
+  - Faulty
+  - killed
+  - Unknown
+  misiones:
+    UNKW:
+      dispositivos:
+      - Unknown
+    ColonyMoon:
+      dispositivos:
+      - CM-ASC-PQM
+      - CM-ASC-CD
+      - CM-ASC-SPS
+      - CM-S-EFAC
+      - CM-S-EFAM
+      - CM-S-CD
+      - CM-S-PQM
+      - CM-S-SPS
+      - CM-PRR-CD
+      - CM-PRR-SPS
+      - CM-PRR-TS
+      - CM-PRR-PQM
+      - CM-PRR-PS
+      - CM-PRR-PSW
+      nombreAbreviado: CLNM
+    GalaxyTwo:
+      dispositivos:
+      - GT-ASC-PQM
+      - GT-ASC-CD
+      - GT-ASC-SPS
+      - GT-S-EFAC
+      - GT-S-EFAM
+      - GT-S-CD
+      - GT-S-PQM
+      - GT-S-SPS
+      - GT-PRR-CD
+      - GT-PRR-SPS
+      - GT-PRR-TS
+      - GT-PRR-PQM
+      - GT-PRR-PS
+      - GT-PRR-OC
+      nombreAbreviado: GALXTWO
+    OrbitOne:
+      dispositivos:
+      - OO-ASC-PQM
+      - OO-ASC-CD
+      - OO-ASC-SPS
+      - OO-S-EFAC
+      - OO-S-EFAM
+      - OO-S-CD
+      - OO-S-PQM
+      - OO-S-SPS
+      - OO-PRR-CD
+      - OO-PRR-SPS
+      - OO-PRR-TS
+      - OO-PRR-PQM
+      - OO-PRR-PS
+      - OO-PRR-OC
+      nombreAbreviado: ORBONE
+    VacMars:
+      dispositivos:
+      - VM-AT-ST
+      - VM-AT-VS
+      - VM-AT-SL
+      - VM-AT-VaT
+      - VM-AT-CD
+      - VM-AT-OC
+      - VM-AT-SPS
+      - VM-CMS-TS
+      - VM-CMS-PQM
+      - VM-CMS-PS
+      - VM-CMS-CD
+      - VM-CMS-OC
+      - VM-CMS-SPS
+      - VM-CMS-WTP
+      - VM-CMS-RPS
+      - VM-ASC-PQM
+      - VM-ASC-CD
+      - VM-ASC-SPS
+      nombreAbreviado: VMRS

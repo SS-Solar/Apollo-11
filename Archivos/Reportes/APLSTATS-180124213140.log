@@ -1,0 +1,99 @@
+ANALISIS DE EVENTOS:
+La informacion registrada a continuacion, muestra la cantidad de eventos por estado para cada dispositivo y mision
+    Mision Dispositivo   Estado Cantidad_Eventos
+ColonyMoon    CM-S-PQM  Unknown                2
+ColonyMoon   CM-PRR-PS   Faulty                3
+ColonyMoon    CM-S-SPS   Faulty                2
+ColonyMoon    CM-S-PQM  Warning                1
+ColonyMoon   CM-S-EFAC  Unknown                2
+ColonyMoon    CM-S-SPS Excelent                2
+ColonyMoon   CM-S-EFAC   Faulty                2
+ColonyMoon    CM-S-SPS  Warning                1
+ColonyMoon   CM-PRR-CD   Faulty                1
+ColonyMoon   CM-PRR-PS  Warning                1
+ColonyMoon  CM-ASC-SPS   killed                1
+ColonyMoon   CM-S-EFAC  Warning                2
+ColonyMoon     CM-S-CD     Good                1
+ColonyMoon   CM-PRR-CD  Unknown                2
+ColonyMoon   CM-ASC-CD  Warning                2
+ColonyMoon  CM-PRR-SPS Excelent                1
+ColonyMoon    CM-S-PQM   Faulty                3
+ColonyMoon   CM-S-EFAM   Faulty                1
+ColonyMoon  CM-ASC-SPS   Faulty                2
+ColonyMoon  CM-ASC-PQM     Good                1
+ColonyMoon   CM-ASC-CD  Unknown                1
+ColonyMoon   CM-PRR-TS Excelent                1
+ColonyMoon  CM-ASC-PQM  Warning                1
+ColonyMoon    CM-S-PQM     Good                1
+ColonyMoon     CM-S-CD  Warning                3
+ColonyMoon   CM-ASC-CD Excelent                1
+ColonyMoon   CM-PRR-CD   killed                1
+ColonyMoon  CM-PRR-SPS   killed                1
+ColonyMoon    CM-S-PQM Excelent                1
+ColonyMoon   CM-PRR-TS  Unknown                1
+ColonyMoon   CM-PRR-TS     Good                2
+ColonyMoon   CM-PRR-TS   Faulty                1
+ColonyMoon  CM-PRR-PQM  Warning                1
+ColonyMoon  CM-PRR-PSW     Good                1
+ColonyMoon   CM-ASC-CD     Good                1
+ColonyMoon  CM-PRR-PSW Excelent                1
+ColonyMoon   CM-PRR-CD     Good                1
+ColonyMoon  CM-ASC-SPS     Good                1
+ColonyMoon  CM-PRR-SPS  Unknown                1
+ColonyMoon  CM-PRR-PSW   Faulty                1
+
+GESTION DE DESCONEXIONES:
+Representa los dispositivos con un mayor numero de desconexiones
+    Mision Dispositivo  Estado Cantidad_Eventos
+ColonyMoon    CM-S-PQM Unknown                2
+ColonyMoon   CM-S-EFAC Unknown                2
+ColonyMoon   CM-PRR-CD Unknown                2
+ColonyMoon   CM-ASC-CD Unknown                1
+ColonyMoon   CM-PRR-TS Unknown                1
+ColonyMoon  CM-PRR-SPS Unknown                1
+
+Una vez analizadas todas las misiones de Apollo-11 se determina que hay 3 dispositivos inoperables,
+lo que corresponde al 7.5% de todos los dispositivos existentes
+
+TABLA DE PORCENTAJES
+    Mision Dispositivo   Estado Cantidad_Eventos  Porcentaje_Eventos
+ColonyMoon     CM-S-CD  Warning                3                5.36
+ColonyMoon   CM-PRR-PS   Faulty                3                5.36
+ColonyMoon    CM-S-PQM   Faulty                3                5.36
+ColonyMoon   CM-S-EFAC  Warning                2                3.57
+ColonyMoon   CM-PRR-TS     Good                2                3.57
+ColonyMoon  CM-ASC-SPS   Faulty                2                3.57
+ColonyMoon   CM-ASC-CD  Warning                2                3.57
+ColonyMoon   CM-PRR-CD  Unknown                2                3.57
+ColonyMoon    CM-S-PQM  Unknown                2                3.57
+ColonyMoon   CM-S-EFAC   Faulty                2                3.57
+ColonyMoon    CM-S-SPS Excelent                2                3.57
+ColonyMoon   CM-S-EFAC  Unknown                2                3.57
+ColonyMoon    CM-S-SPS   Faulty                2                3.57
+ColonyMoon  CM-PRR-PSW Excelent                1                1.79
+ColonyMoon   CM-ASC-CD     Good                1                1.79
+ColonyMoon   CM-PRR-CD     Good                1                1.79
+ColonyMoon   CM-PRR-CD   killed                1                1.79
+ColonyMoon  CM-ASC-SPS     Good                1                1.79
+ColonyMoon  CM-PRR-PQM  Warning                1                1.79
+ColonyMoon   CM-PRR-TS   Faulty                1                1.79
+ColonyMoon  CM-PRR-SPS  Unknown                1                1.79
+ColonyMoon   CM-PRR-TS  Unknown                1                1.79
+ColonyMoon    CM-S-PQM Excelent                1                1.79
+ColonyMoon  CM-PRR-SPS   killed                1                1.79
+ColonyMoon  CM-PRR-PSW     Good                1                1.79
+ColonyMoon   CM-ASC-CD  Unknown                1                1.79
+ColonyMoon   CM-ASC-CD Excelent                1                1.79
+ColonyMoon    CM-S-PQM     Good                1                1.79
+ColonyMoon  CM-ASC-PQM  Warning                1                1.79
+ColonyMoon   CM-PRR-TS Excelent                1                1.79
+ColonyMoon  CM-ASC-PQM     Good                1                1.79
+ColonyMoon   CM-S-EFAM   Faulty                1                1.79
+ColonyMoon  CM-PRR-SPS Excelent                1                1.79
+ColonyMoon     CM-S-CD     Good                1                1.79
+ColonyMoon  CM-ASC-SPS   killed                1                1.79
+ColonyMoon   CM-PRR-PS  Warning                1                1.79
+ColonyMoon   CM-PRR-CD   Faulty                1                1.79
+ColonyMoon    CM-S-SPS  Warning                1                1.79
+ColonyMoon    CM-S-PQM  Warning                1                1.79
+ColonyMoon  CM-PRR-PSW   Faulty                1                1.79
