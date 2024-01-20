@@ -1,6 +1,5 @@
 from art import text2art
 import Archivos.Configuracion.Configuracion as Config
-import Archivos.Procesador.Generador as Gen
 
 
 def apollo11():

@@ -1,4 +1,3 @@
-
 import json
 from datetime import datetime
 import Archivos.Configuracion.Configuracion as Config
@@ -68,18 +67,19 @@ def generar_archivos():
         archivo_log.write("\n")
         
 def generar_reportes():
-    a_eventos = Config.crear_dataFrame()
+    a_eventos = Config.eventos()
     #.to_string(index=False)
     g_desconexiones= Config.gestion_desconexiones()
-    d_inoperables, per_inoperables = Config.dispositivos_inoperables()
+    tabla, d_inoperables, per_inoperables = Config.dispositivos_inoperables()
     porcentajes= Config.Porcentajes()
     hash, date = generar_hash()
     nombre_reporte= os.path.join("Archivos","Reportes", f"APLSTATS-{date}.log") 
     with open(nombre_reporte, "a") as reporte:
-        reporte.write(f"ANALISIS DE EVENTOS:\nLa informacion registrada a continuacion, muestra la cantidad de eventos por estado para cada dispositivo y mision\n{a_eventos.to_string(index=False)}"'\n''\n'
-                    f"GESTION DE DESCONEXIONES:\nRepresenta los dispositivos con un mayor numero de desconexiones\n{g_desconexiones.to_string(index=False)}"'\n''\n'
+        reporte.write(f"ANALISIS DE EVENTOS:\nLa informacion registrada a continuacion, muestra la cantidad de eventos por estado para cada dispositivo y mision\n{a_eventos}"'\n''\n'
+                    f"GESTION DE DESCONEXIONES:\nRepresenta los dispositivos con un mayor numero de desconexiones\n{g_desconexiones}"'\n''\n'
                     f"Una vez analizadas todas las misiones de Apollo-11 se determina que hay {d_inoperables} dispositivos inoperables,\nlo que corresponde al {per_inoperables}% de todos los dispositivos existentes"'\n''\n'
-                    f"TABLA DE PORCENTAJES\n{porcentajes.to_string(index=False)}")
+                    f"DISPOSITIVOS INOPERABLES:\n{tabla}"'\n''\n'
+                    f"TABLA DE PORCENTAJES:\nLa informacion resgitrada a continuacion contiene el registro de datos generados para cada dispositivo y misión con respecto a la cantidad total de datos.\n{porcentajes}")
     print(f"Estadisticas registrados en {nombre_reporte}")
 
 def cantidad_de_archivos_en_carpeta(carpeta):
@@ -90,4 +90,3 @@ def cantidad_de_archivos_en_carpeta(carpeta):
     except FileNotFoundError:
 
         return str(0)
-

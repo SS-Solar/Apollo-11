@@ -1,0 +1,100 @@
+ANALISIS DE EVENTOS:
+La informacion registrada a continuacion, muestra la cantidad de eventos por estado para cada dispositivo y mision
+                       Cantidad_Eventos                                           
+Estado                         Excelent Faulty Good Unknown Warning killed unknown
+Mision     Dispositivo                                                            
+ColonyMoon CM-ASC-PQM                 1      1    0       1       0      1       0
+           CM-PRR-CD                  1      0    0       1       0      0       0
+           CM-PRR-PQM                 0      0    1       0       0      0       0
+           CM-PRR-PSW                 1      1    1       0       2      0       0
+           CM-PRR-TS                  0      0    0       1       1      0       0
+           CM-S-CD                    0      0    0       0       0      1       0
+           CM-S-EFAC                  1      0    0       0       0      0       0
+           CM-S-EFAM                  0      0    0       1       1      0       0
+           CM-S-PQM                   1      0    0       0       0      0       0
+           CM-S-SPS                   0      1    1       0       0      0       0
+GalaxyTwo  GT-ASC-PQM                 1      0    0       0       0      0       0
+           GT-ASC-SPS                 1      1    0       0       0      0       0
+           GT-PRR-CD                  0      1    1       0       0      1       0
+           GT-PRR-OC                  0      0    0       0       1      0       0
+           GT-PRR-PQM                 1      0    0       0       0      0       0
+           GT-PRR-SPS                 0      2    0       2       0      0       0
+           GT-S-CD                    0      0    0       0       1      0       0
+           GT-S-EFAC                  0      0    0       1       0      0       0
+           GT-S-EFAM                  1      0    0       0       0      0       0
+           GT-S-PQM                   0      0    1       0       0      0       0
+           GT-S-SPS                   0      0    0       0       0      1       0
+OrbitOne   OO-ASC-CD                  0      0    0       1       1      0       0
+           OO-ASC-PQM                 0      1    0       0       0      0       0
+           OO-ASC-SPS                 0      0    0       1       0      0       0
+           OO-PRR-OC                  0      1    0       0       1      0       0
+           OO-PRR-PQM                 0      0    0       0       1      1       0
+           OO-PRR-PS                  0      0    0       0       1      0       0
+           OO-S-CD                    1      0    0       0       0      0       0
+           OO-S-EFAC                  1      1    1       0       0      0       0
+           OO-S-EFAM                  0      0    1       0       0      0       0
+           OO-S-PQM                   1      1    1       0       0      0       0
+UNKW       unknown                    0      0    0       0       0      0      13
+VacMars    VM-ASC-CD                  0      0    0       0       0      1       0
+           VM-ASC-SPS                 0      0    1       0       0      0       0
+           VM-AT-CD                   1      0    0       0       0      0       0
+           VM-AT-OC                   0      1    0       0       0      0       0
+           VM-AT-SL                   0      0    0       2       0      0       0
+           VM-AT-SPS                  0      0    0       1       1      0       0
+           VM-AT-ST                   0      0    0       1       0      0       0
+           VM-CMS-CD                  0      0    1       0       3      0       0
+           VM-CMS-OC                  0      1    1       0       0      0       0
+           VM-CMS-PQM                 0      0    0       0       1      1       0
+           VM-CMS-RPS                 0      1    0       0       0      1       0
+           VM-CMS-SPS                 0      1    0       1       0      0       0
+           VM-CMS-TS                  1      0    0       0       1      1       0
+           VM-CMS-WTP                 0      0    0       1       0      0       0
+
+GESTION DE DESCONEXIONES:
+Representa los dispositivos con un mayor numero de desconexiones
+                       Cantidad_Eventos
+Mision     Dispositivo                 
+ColonyMoon CM-ASC-PQM                 1
+           CM-PRR-CD                  1
+           CM-PRR-TS                  1
+           CM-S-EFAM                  1
+GalaxyTwo  GT-PRR-SPS                 2
+           GT-S-EFAC                  1
+OrbitOne   OO-ASC-CD                  1
+           OO-ASC-SPS                 1
+VacMars    VM-AT-SL                   2
+           VM-CMS-SPS                 1
+
+Una vez analizadas todas las misiones de Apollo-11 se determina que hay 9 dispositivos inoperables,
+lo que corresponde al 12.0% de todos los dispositivos existentes
+
+DISPOSITIVOS INOPERABLES:
+                       Cantidad_Eventos
+Mision     Dispositivo                 
+ColonyMoon CM-ASC-PQM                 1
+           CM-S-CD                    1
+GalaxyTwo  GT-PRR-CD                  1
+           GT-S-SPS                   1
+OrbitOne   OO-PRR-PQM                 1
+VacMars    VM-ASC-CD                  1
+           VM-CMS-PQM                 1
+           VM-CMS-RPS                 1
+           VM-CMS-TS                  1
+
+TABLA DE PORCENTAJES:
+La informacion resgitrada a continuacion contiene el registro de datos generados para cada dispositivo y misión con respecto a la cantidad total de datos.
+                           Porcentaje de datos Generados(%)
+Mision     Dispositivo                                     
+ColonyMoon CM-S-SPS                    1.08                
+           CM-PRR-CD                   1.08                
+           CM-ASC-PQM                  1.08                
+           CM-S-PQM                    1.08                
+           CM-ASC-PQM                  1.08                
+...                                                     ...
+VacMars    VM-CMS-RPS                  1.08                
+           VM-CMS-PQM                  1.08                
+           VM-CMS-TS                   1.08                
+           VM-AT-SPS                   1.08                
+           VM-CMS-OC                   1.08                
+
+[75 rows x 1 columns]

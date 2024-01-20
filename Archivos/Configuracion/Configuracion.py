@@ -156,34 +156,32 @@ def analisis_eventos():
     #Retorna un diccionario con los datos optenidos en los archivos logs       
     return registro_eventos
 
+def eventos():
+    df= crear_dataFrame()
+    df.set_index(['Mision', 'Dispositivo', 'Estado'], inplace=True)
+    tabla_eventos = df[['Cantidad_Eventos']].unstack().fillna(0).astype(int)
+    return tabla_eventos
+
 def gestion_desconexiones():
     dtf = crear_dataFrame()
     df_filtrado = dtf[dtf['Estado']=='Unknown']
-    df_filtrado = df_filtrado.sort_values(by = 'Cantidad_Eventos', ascending= False)
+    df_filtrado = df_filtrado.sort_values(by = 'Cantidad_Eventos', ascending= False).head(10).groupby(['Mision', 'Dispositivo']).agg({'Cantidad_Eventos': 'sum'})
     #Retorna un Dataframe con los dispositivos que se encuentran en Unknown para cada mision
-    return df_filtrado.head(10)
+    return df_filtrado
 
 def dispositivos_inoperables():
     data_total = crear_dataFrame()
     #Arroja el porcentaje de dispositivos inoperables de todas las misiones con respecto al total de dispositivos.
-    df_inop = data_total[data_total['Estado']=='killed']
+    df_inop = data_total[data_total['Estado']=='killed'].groupby(['Mision', 'Dispositivo']).agg({'Cantidad_Eventos': 'sum'})
     porcentaje_inop = (int(df_inop.shape[0])/int(data_total.shape[0]))*100
     #Retorna la cantidad de disp inoperables de todas las misiones y su porcentaje
-    return df_inop.shape[0], round(porcentaje_inop, 2)
+    return df_inop, df_inop.shape[0], round(porcentaje_inop, 2)
 
 def Porcentajes():
     data_total = crear_dataFrame()
-    data_total= data_total.sort_values(by='Cantidad_Eventos', ascending=False)
-    porcentaje = []
     total_eventos = data_total['Cantidad_Eventos'].sum()
-    print(total_eventos)
-    for per in range(data_total.shape[0]):
-        p_calculado = data_total.iloc[per,3]/total_eventos*100
-        porcentaje.append(round(p_calculado,2))
-    data_total['Porcentaje_Eventos']= porcentaje
+    formato_centro = lambda x: f'{"{:^35}".format(x)}'
+    data_total['Porcentaje de datos Generados(%)'] = (data_total['Cantidad_Eventos'] / total_eventos * 100).apply(lambda x: round(x, 2)).apply(formato_centro)
+    data_total= data_total.drop(['Estado','Cantidad_Eventos'], axis=1)
+    data_total.set_index(['Mision', 'Dispositivo'], inplace=True)
     return data_total
-
-
-
-df= crear_dataFrame()
-print(df)
