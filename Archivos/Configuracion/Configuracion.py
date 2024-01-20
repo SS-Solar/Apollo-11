@@ -117,23 +117,8 @@ def cantidad_max_archivos():
     cantidad_max_archivos = data["settings"]["cantidad_max_archivos"]
     return int(cantidad_max_archivos)
 
-def Listados_Logs():
-    # Obtener la ruta del directorio del script actual
-    ruta_script = os.path.abspath(__file__) 
-    # Construir la ruta relativa al directorio 'Logs' dentro de 'Archivos'
-    ruta_logs = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(ruta_script))), "Archivos", "Logs", "ColonyMoon")
-    lista_logs = [archivo for archivo in os.listdir(ruta_logs) if archivo.endswith('.log')]
-    return lista_logs, ruta_logs
-    # Crea una lista con los nombres de los archivos en el directorio Logs
 
-def Rango_Fechas():
-    Fecha_actual = datetime.now()
-    fecha_inicial = datetime(Fecha_actual.year, Fecha_actual.month, Fecha_actual.day, 0,0,0)
-    fecha_final = fecha_inicial + timedelta(days=1) - timedelta(microseconds=1)
-    return fecha_inicial, fecha_final
-
-
-def Crear_DataFrame():
+def crear_dataFrame():
     eventos = analisis_eventos()
     data_frame = ["Mision", "Dispositivo", "Estado", "Cantidad_Eventos"]
     df = pd.DataFrame(columns= data_frame)
@@ -149,14 +134,20 @@ def Crear_DataFrame():
     return df
 
 def analisis_eventos():
-    lista,ruta_logs = Listados_Logs()
+    ruta_script = os.path.abspath(__file__) 
+    # Construir la ruta relativa al directorio 'Logs' dentro de 'Archivos'
+    ruta_logs = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(ruta_script))), "Archivos", "Logs")
+    lista_carpetas = [nombre for nombre in os.listdir(ruta_logs)]
     registro_eventos = {}
-    for datos_log in lista: #Itero en cada elemento de la lista
-        ruta_reportes = os.path.join(ruta_logs, datos_log) #Define la ruta completa de cada archivo .log
-        with open(ruta_reportes, 'r') as arch_log: #Abre el archivo en modo lectura
-            lineas = arch_log.readlines()
-            for line in lineas:
-                registro_dict = json.loads(line) #Convertir el archivo json a diccionario
+    for archivo_carpeta in lista_carpetas:
+        #Ruta relativa a las carpetas dentro del directorio Logs
+        ruta_carpeta = os.path.join(ruta_logs, archivo_carpeta)
+        lista_archivos = [archivo for archivo in os.listdir(ruta_carpeta) if archivo.endswith('.log')]
+        for a in lista_archivos:
+            ruta_archivos = os.path.join(ruta_carpeta, a)
+            with open(ruta_archivos, 'r') as arch_log: #Abre el archivo en modo lectura
+                archivo = arch_log.read()
+                registro_dict = json.loads(archivo) #Convertir el archivo json a diccionario
                 mision= registro_dict['mision']
                 dispositivo = registro_dict['device_type']
                 estado = registro_dict['device_status']
@@ -165,15 +156,15 @@ def analisis_eventos():
     #Retorna un diccionario con los datos optenidos en los archivos logs       
     return registro_eventos
 
-def Gestion_Desconexiones():
-    dtf = Crear_DataFrame()
+def gestion_desconexiones():
+    dtf = crear_dataFrame()
     df_filtrado = dtf[dtf['Estado']=='Unknown']
     df_filtrado = df_filtrado.sort_values(by = 'Cantidad_Eventos', ascending= False)
     #Retorna un Dataframe con los dispositivos que se encuentran en Unknown para cada mision
     return df_filtrado.head(10)
 
-def Dispositivos_inoperables():
-    data_total = Crear_DataFrame()
+def dispositivos_inoperables():
+    data_total = crear_dataFrame()
     #Arroja el porcentaje de dispositivos inoperables de todas las misiones con respecto al total de dispositivos.
     df_inop = data_total[data_total['Estado']=='killed']
     porcentaje_inop = (int(df_inop.shape[0])/int(data_total.shape[0]))*100
@@ -181,7 +172,7 @@ def Dispositivos_inoperables():
     return df_inop.shape[0], round(porcentaje_inop, 2)
 
 def Porcentajes():
-    data_total = Crear_DataFrame()
+    data_total = crear_dataFrame()
     data_total= data_total.sort_values(by='Cantidad_Eventos', ascending=False)
     porcentaje = []
     total_eventos = data_total['Cantidad_Eventos'].sum()
@@ -192,19 +183,7 @@ def Porcentajes():
     data_total['Porcentaje_Eventos']= porcentaje
     return data_total
 
-def Crear_copia():
-    ruta_script = os.path.abspath(__file__)
-    ruta_reporte = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(ruta_script))), "Archivos", "Reportes")
-    lista_reporte = [rep for rep in os.listdir(ruta_reporte) if rep.endswith('.log')]
-    archivo = lista_reporte[-1]
-    if lista_reporte:
-        archivo_original = os.path.join(ruta_reporte, archivo)
-        ruta_copia = os.path.join("Archivos","Reportes","Copias", f"COPIA-{archivo}") 
-        # Hacer la copia del archivo
-        shutil.copyfile(archivo_original, ruta_copia)
-        print("Copia creada exitosamente.")
-    else:
-        print("No se encontraron archivos .log para copiar.")
 
 
-
+df= crear_dataFrame()
+print(df)

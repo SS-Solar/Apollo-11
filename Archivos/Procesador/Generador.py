@@ -68,10 +68,10 @@ def generar_archivos():
         archivo_log.write("\n")
         
 def generar_reportes():
-    a_eventos = Config.Crear_DataFrame()
+    a_eventos = Config.crear_dataFrame()
     #.to_string(index=False)
-    g_desconexiones= Config.Gestion_Desconexiones()
-    d_inoperables, per_inoperables = Config.Dispositivos_inoperables()
+    g_desconexiones= Config.gestion_desconexiones()
+    d_inoperables, per_inoperables = Config.dispositivos_inoperables()
     porcentajes= Config.Porcentajes()
     hash, date = generar_hash()
     nombre_reporte= os.path.join("Archivos","Reportes", f"APLSTATS-{date}.log") 
