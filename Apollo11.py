@@ -38,6 +38,7 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         # Captura la excepción de interrupción del teclado (Ctrl+C)
         Procesador.generar_reportes()
+        Menu.mostrar_reporte()
 
         print("Programa cancelado. Saliendo...")
     except Exception as e:

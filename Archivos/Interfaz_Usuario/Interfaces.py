@@ -1,16 +1,31 @@
 from art import text2art
 import Archivos.Configuracion.Configuracion as Config
-
+import os
 
 def apollo11():
-    mensaje = "APOLLO_11"
-    arte = text2art(mensaje, font="block")
+    mensaje = "APOLLO-11"
+    arte = text2art(mensaje, font="")
     print(arte)
     
 def bienvenido():
     mensaje = "Bienvenido A"
     arte = text2art(mensaje, font="")
     print(arte)
+
+def mostrar_reporte():
+
+    carpeta = 'Archivos/Reportes/'
+    archivos = os.listdir(carpeta)
+    archivos = [archivo for archivo in archivos if os.path.isfile(os.path.join(carpeta, archivo))]
+    archivos.sort(key=lambda x: os.path.getmtime(os.path.join(carpeta, x)))
+    if archivos:
+        ultimo_archivo = archivos[-1]
+    else:
+        print("La carpeta está vacía o no contiene archivos.")
+
+    with open('Archivos/Reportes/'+ultimo_archivo, 'r') as file:
+        contenido = file.read()
+    print(contenido)
 
 def menu_inicial():
         bienvenido()
@@ -65,8 +80,3 @@ def menu_inicial():
                     else: 
                         print("Opcion erronea, intentalo otra vez")
                     
-
-          
-          
-     
-
