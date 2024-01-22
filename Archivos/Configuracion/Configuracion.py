@@ -88,13 +88,24 @@ def cambiar_min_archivos (archivos_min: int) ->None:
         yaml.dump(data, archivo, default_flow_style=False)
     print(" Cantidad minima de archivos - Modificados y almacenados correctamente")
 
-def cambiar_max_archivos (archivos_max: int):
+def cambiar_max_archivos (archivos_max: int) ->None:
+    """Cambia la cantidad maxima de archivos que se pueden crear en un ciclo de iteracion, esto editando el archivo YAML
+
+    Args:
+        archivos_max (int): Cantidad maxima de archivos a editar en el archivo YAML
+    """
     data["settings"]["cantidad_max_archivos"] = archivos_max
     with open(ruta, "w") as archivo:
         yaml.dump(data, archivo, default_flow_style=False)
     print(" Datos modificados y almacenados correctamente")   
 
-def nuevo_dispositivo (mision,nuevo_dispositivo):
+def nuevo_dispositivo (mision:int ,nuevo_dispositivo) ->None:
+    """Añade un duevo dispositivo segun la mision seleccionada, añadiendo el dispositivo segun la entrada del segundo argumento
+
+    Args:
+        mision (_type_): _description_
+        nuevo_dispositivo (_type_): _description_
+    """
     try:
         data["settings"]["misiones"][mision]["dispositivos"].append(nuevo_dispositivo)
     except:
