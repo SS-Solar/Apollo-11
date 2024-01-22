@@ -1,52 +1,51 @@
-#import Clases.informacion.datos_de_identificacion as VACMARS
-
 #Dependencias
-
 import yaml
 import os
-import platform
 from datetime import datetime, timedelta
 import json
 import pandas as pd
-import shutil
-import typing
-import logging
-
+from typing import List
 
 # Variables locales usadas
-
-misiones_ar = []
-dispositivos_ar = []
-
+misiones_ar = List[str]
+dispositivos_ar = List[str]
 ruta_absoluta = os.path.dirname(os.path.abspath(__file__))
 ruta= os.path.join(ruta_absoluta, 'config.yaml')
-
-
+# Apertura de archivo de configuracion para su respectivo uso
 with open(ruta, "r") as file:
     data=yaml.safe_load(file)
 
-    # Nombres de misiones
-def misiones():
-        
+def misiones() -> List[str]:
+    """_summary_
+    Devuelve las misiones almacenadas en el archivo YAML
+    Returns:
+        List[str]: Listado de Misiones
+    """
     misiones_ar = []
-      
     for misiones in data ["settings"]["misiones"]:
         nombre_mision= misiones
         misiones_ar.append(nombre_mision)
-    
     return misiones_ar
 
-def nombres_abreviados():
-    misiones_abreviados = []
+def nombres_abreviados() -> List[str]:
+    """Retorna la lista de los nombres de las misiones, pero abreviados
+
+    Returns:
+        List[str]: Nombres de misiones abreviados
+    """
+    misiones_abreviados = List[str]
     for mision, detalles in data["settings"]["misiones"].items():
-        nombre_mision = mision
+        nombre_mision :[str] = mision
         try:
             misiones_abreviados.append(detalles["nombreAbreviado"])
         except:
             misiones_abreviados.append("Unknow")
     return misiones_abreviados
 
-def dispositivos ():
+def dispositivos ()-> None:
+    """Genera una impresion en consola de las misiones con
+    sus respectivos dispositivos
+    """
     for mision, detalles in data["settings"]["misiones"].items():
         try:
             nombre_mision = mision
@@ -58,22 +57,36 @@ def dispositivos ():
         except:
             pass
 
-def ciclo():
-    ciclo = data["settings"]["ciclo_simulacion"]
+def ciclo() -> float:
+    """Retorna el ciclo de iteración que se encuentra en el archivo YAML
+    Returns:
+        float: Ciclo de iteración
+    """
+    ciclo:float = data["settings"]["ciclo_simulacion"]
     print(f"El ciclo actual es de: {ciclo} s \n")
     return ciclo
 
-def cambiar_ciclo (ciclo: int):
+def cambiar_ciclo (ciclo: float) -> None:
+    """Cambia el ciclo de iteracion en el archivo YAML
+
+    Args:
+        ciclo (float): Ciclo de iteracion 
+    """
     data["settings"]["ciclo_simulacion"] = ciclo
     with open(ruta, "w") as archivo:
         yaml.dump(data, archivo, default_flow_style=False)
     print(" Datos modificados y almacenados correctamente")
 
-def cambiar_min_archivos (archivos_min: int):
+def cambiar_min_archivos (archivos_min: int) ->None:
+    """Cambia la cantidad minima de archivos que se pueden generar desde el archivo de configuracion YAML
+
+    Args:
+        archivos_min (int): recibe la cantidad de archivos minimos
+    """
     data["settings"]["cantidad_min_archivos"] = archivos_min
     with open(ruta, "w") as archivo:
         yaml.dump(data, archivo, default_flow_style=False)
-    print(" Datos modificados y almacenados correctamente")
+    print(" Cantidad minima de archivos - Modificados y almacenados correctamente")
 
 def cambiar_max_archivos (archivos_max: int):
     data["settings"]["cantidad_max_archivos"] = archivos_max
