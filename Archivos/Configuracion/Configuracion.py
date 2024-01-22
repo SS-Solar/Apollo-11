@@ -5,6 +5,7 @@ from datetime import datetime, timedelta
 import json
 import pandas as pd
 from typing import List
+import shutil
 
 # Variables locales usadas
 misiones_ar = List[str]
@@ -99,12 +100,12 @@ def cambiar_max_archivos (archivos_max: int) ->None:
         yaml.dump(data, archivo, default_flow_style=False)
     print(" Datos modificados y almacenados correctamente")   
 
-def nuevo_dispositivo (mision:int ,nuevo_dispositivo) ->None:
+def nuevo_dispositivo (mision: int ,nuevo_dispositivo: str) ->None:
     """Añade un duevo dispositivo segun la mision seleccionada, añadiendo el dispositivo segun la entrada del segundo argumento
 
     Args:
-        mision (_type_): _description_
-        nuevo_dispositivo (_type_): _description_
+        mision (int): Toma la mision dependiendo el numero de posicion de la mision.
+        nuevo_dispositivo (str): Cadena de texto que recibe el nombre del dispositivo para añadirla al archimo YAML
     """
     try:
         data["settings"]["misiones"][mision]["dispositivos"].append(nuevo_dispositivo)
@@ -115,7 +116,12 @@ def nuevo_dispositivo (mision:int ,nuevo_dispositivo) ->None:
         yaml.dump(data, archivo, default_flow_style=False)
     print(f'Se añadió el dispositivo {nuevo_dispositivo} correctamente a la misión {mision}.')
 
-def eliminar_dispositivo (mision,dispositivo_a_eliminar):
+def eliminar_dispositivo (mision: int, dispositivo_a_eliminar: str) -> None:
+    """Elimina un dispositivo seleccionado desde la consola
+    Args:
+        mision (int): Numero de mision dependiendo la posicion
+        dispositivo_a_eliminar (str): cadena de texto del dispositivo a eliminar
+    """
     try:
         data["settings"]["misiones"][mision]["dispositivos"].pop(dispositivo_a_eliminar)
         with open(ruta, "w") as archivo:
@@ -124,88 +130,151 @@ def eliminar_dispositivo (mision,dispositivo_a_eliminar):
     except:
         print(f"el dispositivo seleccionado no existe para la misión {mision}")
 
-def dispositivos_mision(num_mision):
-    mision = misiones()
+def dispositivos_mision(num_mision: int)->List[str]:
+    """Retorna todos los dispostivos existentes por cada mision
+
+    Args:
+        num_mision (int): Numero de la mision, responde a la posicion del vector
+
+    Returns:
+        List[str]: Listado de dispositivos con respecto a la mision
+    """
+    mision: List[str] = misiones()
     dispositivos = data["settings"]["misiones"][mision[num_mision]]["dispositivos"]
     return dispositivos
 
-def estado():
+def estado() -> List[str]:
+    """Enlista todos los estados posibles de un dispositivo, leidos desde el archivo YAML 
+
+    Returns:
+        List[str]: Listado de posibles estados
+    """
     estados = data["settings"]["estado_de_dispositivo"]
     return estados
 
-def cantidad_min_archivos():
+def cantidad_min_archivos()-> int:
+    """Retorna la cantidad minima de archivos a generar
+
+    Returns:
+        int: Cantidad Minima de archivos a generar
+    """
     cantidad_min_archivos = data["settings"]["cantidad_min_archivos"]
     return int(cantidad_min_archivos)
 
-def cantidad_max_archivos():
+def cantidad_max_archivos()-> int:
+
+    """Retorna la cantidad maxima de archivos
+
+    Returns:
+        int: Cantidad Maxima de archivos a generar
+    """
     cantidad_max_archivos = data["settings"]["cantidad_max_archivos"]
     return int(cantidad_max_archivos)
 
 
-def crear_dataFrame():
-    eventos = analisis_eventos()
-    data_frame = ["Mision", "Dispositivo", "Estado", "Cantidad_Eventos"]
-    df = pd.DataFrame(columns= data_frame)
-    nuevos_registros = []
+def crear_dataFrame() -> str:
+    """Crea un dataFrame a partir de los reportes y analisis de los eventos
+    Returns:
+        str: Dataframe que resume los eventos ocurridos en cada mision
+    """
+    eventos: str = analisis_eventos()
+    data_frame:List[str] = ["Mision", "Dispositivo", "Estado", "Cantidad_Eventos"]
+    df:any = pd.DataFrame(columns= data_frame)
+    nuevos_registros:List[str] = []
     for llave, valor in eventos.items():
         mision, device, status = llave
-        cantidad = valor
-        nuevo_registro = {"Mision": mision, "Dispositivo": device, "Estado": status, "Cantidad_Eventos": cantidad}
+        cantidad:int = valor
+        nuevo_registro: dict[str,any] = {"Mision": mision, "Dispositivo": device, "Estado": status, "Cantidad_Eventos": cantidad}
         nuevos_registros.append(nuevo_registro)
-    # Concatenar los nuevos registros al DataFrame original
-    df = pd.concat([df, pd.DataFrame(nuevos_registros)], ignore_index=True)
-
+    df:any = pd.concat([df, pd.DataFrame(nuevos_registros)], ignore_index=True)
     return df
 
-def analisis_eventos():
-    ruta_script = os.path.abspath(__file__) 
-    # Construir la ruta relativa al directorio 'Logs' dentro de 'Archivos'
-    ruta_logs = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(ruta_script))), "Archivos", "Logs")
-    lista_carpetas = [nombre for nombre in os.listdir(ruta_logs)]
+def analisis_eventos() -> dict:
+
+    """Genera un Documento con el resumen y analisis de los eventos 
+
+    Returns:
+        dict: analisis de eventos 
+    """
+    ruta_script:str = os.path.abspath(__file__)
+    ruta_logs:str = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(ruta_script))), "Archivos", "Logs")
+    lista_carpetas:List[str] = [nombre for nombre in os.listdir(ruta_logs)]
     registro_eventos = {}
     for archivo_carpeta in lista_carpetas:
-        #Ruta relativa a las carpetas dentro del directorio Logs
-        ruta_carpeta = os.path.join(ruta_logs, archivo_carpeta)
-        lista_archivos = [archivo for archivo in os.listdir(ruta_carpeta) if archivo.endswith('.log')]
+        ruta_carpeta:str = os.path.join(ruta_logs, archivo_carpeta)
+        lista_archivos:str = [archivo for archivo in os.listdir(ruta_carpeta) if archivo.endswith('.log')]
         for a in lista_archivos:
-            ruta_archivos = os.path.join(ruta_carpeta, a)
-            with open(ruta_archivos, 'r') as arch_log: #Abre el archivo en modo lectura
-                archivo = arch_log.read()
-                registro_dict = json.loads(archivo) #Convertir el archivo json a diccionario
-                mision= registro_dict['mision']
-                dispositivo = registro_dict['device_type']
-                estado = registro_dict['device_status']
-                llave = (mision,dispositivo,estado)
-                registro_eventos[llave]= registro_eventos.get(llave,0)+1 #Incrememta el valor de la llave obtenida
-    #Retorna un diccionario con los datos optenidos en los archivos logs       
+            ruta_archivos:str = os.path.join(ruta_carpeta, a)
+            with open(ruta_archivos, 'r') as arch_log: 
+                archivo:str = arch_log.read()
+                registro_dict:str = json.loads(archivo) 
+                mision:str = registro_dict['mision']
+                dispositivo:str = registro_dict['device_type']
+                estado:str = registro_dict['device_status']
+                llave:str = (mision,dispositivo,estado)
+                registro_eventos[llave] = registro_eventos.get(llave,0)+1       
     return registro_eventos
 
-def eventos():
-    df= crear_dataFrame()
+def eventos()-> str:
+    """Retorna los eventos por mision en donde se evidencia el estado de los dispositivos
+
+    Returns:
+        str: tabla de eventos de los dispositivos
+    """
+    df:str= crear_dataFrame()
     df.set_index(['Mision', 'Dispositivo', 'Estado'], inplace=True)
-    tabla_eventos = df[['Cantidad_Eventos']].unstack().fillna(0).astype(int)
+    tabla_eventos: any = df[['Cantidad_Eventos']].unstack().fillna(0).astype(int)
     return tabla_eventos
 
-def gestion_desconexiones():
-    dtf = crear_dataFrame()
-    df_filtrado = dtf[dtf['Estado']=='Unknown']
-    df_filtrado = df_filtrado.sort_values(by = 'Cantidad_Eventos', ascending= False).head(10).groupby(['Mision', 'Dispositivo']).agg({'Cantidad_Eventos': 'sum'})
-    #Retorna un Dataframe con los dispositivos que se encuentran en Unknown para cada mision
+def gestion_desconexiones()->str:
+    """Retorna de el listado de eventos, los dispositivos que se encuentren en un estado desconocido
+
+    Returns:
+        str: dispositivos en estado UNKW
+    """
+    dtf:str = crear_dataFrame()
+    df_filtrado:str = dtf[dtf['Estado']=='Unknown']
+    df_filtrado:str = df_filtrado.sort_values(by = 'Cantidad_Eventos', ascending= False).head(10).groupby(['Mision', 'Dispositivo']).agg({'Cantidad_Eventos': 'sum'})
     return df_filtrado
 
-def dispositivos_inoperables():
-    data_total = crear_dataFrame()
-    #Arroja el porcentaje de dispositivos inoperables de todas las misiones con respecto al total de dispositivos.
-    df_inop = data_total[data_total['Estado']=='killed'].groupby(['Mision', 'Dispositivo']).agg({'Cantidad_Eventos': 'sum'})
-    porcentaje_inop = (int(df_inop.shape[0])/int(data_total.shape[0]))*100
-    #Retorna la cantidad de disp inoperables de todas las misiones y su porcentaje
+def dispositivos_inoperables()-> [str, str, float] :
+    """Retorna el analisis de los dispositivoas con estado Killed
+
+    Returns:
+        [str, str, float]: retorna el normbre de la mision, sigue el dispositivo y finaliza con el porcentaje
+    """
+    data_total:str = crear_dataFrame()
+    df_inop:any = data_total[data_total['Estado']=='killed'].groupby(['Mision', 'Dispositivo']).agg({'Cantidad_Eventos': 'sum'})
+    porcentaje_inop:float = (int(df_inop.shape[0])/int(data_total.shape[0]))*100
     return df_inop, df_inop.shape[0], round(porcentaje_inop, 2)
 
-def Porcentajes():
-    data_total = crear_dataFrame()
-    total_eventos = data_total['Cantidad_Eventos'].sum()
+def Porcentajes()->any:
+    """Retorna una tabla con los porcentajes de cada mision, porecntajes de desconexion
+
+    Returns:
+        any: Porcentajes
+    """
+    data_total:str = crear_dataFrame()
+    total_eventos:int = data_total['Cantidad_Eventos'].sum()
     formato_centro = lambda x: f'{"{:^35}".format(x)}'
     data_total['Porcentaje de datos Generados(%)'] = (data_total['Cantidad_Eventos'] / total_eventos * 100).apply(lambda x: round(x, 2)).apply(formato_centro)
-    data_total= data_total.drop(['Estado','Cantidad_Eventos'], axis=1)
+    data_total:any= data_total.drop(['Estado','Cantidad_Eventos'], axis=1)
     data_total.set_index(['Mision', 'Dispositivo'], inplace=True)
     return data_total
+
+def Crear_copia()->None:
+    """Crea una copia del archivo del ultimo reporte generado
+    """
+    ruta_script = os.path.abspath(__file__)
+    ruta_reporte = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(ruta_script))), "Archivos", "Reportes")
+    lista_reporte = [rep for rep in os.listdir(ruta_reporte) if rep.endswith('.log')]
+    archivo = lista_reporte[-1]
+    if lista_reporte:
+        archivo_original = os.path.join(ruta_reporte, archivo)
+        ruta_copia = os.path.join("Archivos","Reportes","Copias", f"COPIA-{archivo}") 
+        # Hacer la copia del archivo
+        shutil.copyfile(archivo_original, ruta_copia)
+
+        print("Copia creada exitosamente.")
+    else:
+        print("No se encontraron archivos .log para copiar.")

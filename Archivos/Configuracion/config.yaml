@@ -1,7 +1,7 @@
 settings:
   cantidad_max_archivos: 100
   cantidad_min_archivos: 1
-  ciclo_simulacion: 22.0
+  ciclo_simulacion: 3.0
   estado_de_dispositivo:
   - Excelent
   - Good
@@ -26,6 +26,7 @@ settings:
       - CM-PRR-PQM
       - CM-PRR-PS
       - CM-PRR-PSW
+      - CM-KSS-ASS
       nombreAbreviado: CLNM
     GalaxyTwo:
       dispositivos:
@@ -61,9 +62,6 @@ settings:
       - OO-PRR-PS
       - OO-PRR-OC
       nombreAbreviado: ORBONE
-    UNKW:
-      dispositivos:
-      - Unknown
     VacMars:
       dispositivos:
       - VM-AT-ST
@@ -83,5 +81,7 @@ settings:
       - VM-CMS-RPS
       - VM-ASC-PQM
       - VM-ASC-CD
-      - VM-ASC-SPS
       nombreAbreviado: VMRS
+    UNKW:
+      dispositivos:
+      - Unknown
