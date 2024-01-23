@@ -212,7 +212,7 @@ def analisis_eventos() -> dict:
     """
     ruta_script: str = os.path.abspath(__file__)
     ruta_logs: str = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(ruta_script))), "Archivos", "Logs")
-    lista_carpetas: List[str] = [nombre for nombre in os.listdir(ruta_logs)]
+    lista_carpetas: List[str] = os.listdir(ruta_logs)
     registro_eventos = {}
     for archivo_carpeta in lista_carpetas:
         ruta_carpeta: str = os.path.join(ruta_logs, archivo_carpeta)
@@ -299,3 +299,5 @@ def Crear_copia() -> None:
         print("Copia creada exitosamente.")
     else:
         print("No se encontraron archivos .log para copiar.")
+    
+
