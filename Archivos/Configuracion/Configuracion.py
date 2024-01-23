@@ -5,8 +5,6 @@ import json
 import pandas as pd
 from typing import List
 import shutil
-from Archivos.Configuracion.logger import logger
-
 
 # Variables locales usadas
 misiones_ar = List[str]
@@ -19,21 +17,16 @@ with open(ruta, "r") as file:
 
 
 def misiones() -> List[str]:
-    """
+    """_summary_
     Devuelve las misiones almacenadas en el archivo YAML
     Returns:
         List[str]: Listado de Misiones
     """
-    try:
-        misiones_ar = []
-        for misiones in data["settings"]["misiones"]:
-            nombre_mision: str = misiones
-            misiones_ar.append(nombre_mision)
-        logger.info("Listado de misiones Creado")
-        return misiones_ar
-    except Exception as e:
-        logger.error(f"Se ha producido un error en la generacion de misiones: {e}")
-        misiones_ar = ["Unknown"]
+    misiones_ar = []
+    for misiones in data["settings"]["misiones"]:
+        nombre_mision = misiones
+        misiones_ar.append(nombre_mision)
+    return misiones_ar
 
 
 def nombres_abreviados() -> List[str]:
@@ -41,33 +34,27 @@ def nombres_abreviados() -> List[str]:
     Returns:
         List[str]: Nombres de misiones abreviados
     """
-
-    try:
-        misiones_abreviados = List[str]
-        for mision, detalles in data["settings"]["misiones"].items():
+    misiones_abreviados = List[str]
+    for mision, detalles in data["settings"]["misiones"].items():
+        try:
             misiones_abreviados.append(detalles["nombreAbreviado"])
-        logger.info("Listado de misiones abreviadas generado")
-        return misiones_abreviados
-    except Exception as e:
-        logger.error(f"Se ha producido un error en la generacion de nombres abreviados misiones: {e}")
-        misiones_abreviados.append("Unknow")
+        except Exception as e:
+            e.error('The user does not exist with that ID')
+            misiones_abreviados.append("Unknow")
+    return misiones_abreviados
 
 
 def dispositivos() -> None:
     """Genera una impresion en consola de las misiones con
     sus respectivos dispositivos
     """
-    try:
-        for mision, detalles in data["settings"]["misiones"].items():
-            nombre_mision = mision
-            dispositivos = detalles["dispositivos"]
-            print(f"Misión: {nombre_mision}")
-            print("Dispositivos: ")
-            for dispositivo in dispositivos:
-                print(f"  - {dispositivo}")
-        logger.info("Misiones desplegadas en consola")
-    except Exception as e:
-        logger.error(f"Se ha producido un error en mostrar los archivos: {e}")
+    for mision, detalles in data["settings"]["misiones"].items():
+        nombre_mision = mision
+        dispositivos = detalles["dispositivos"]
+        print(f"Misión: {nombre_mision}")
+        print("Dispositivos: ")
+        for dispositivo in dispositivos:
+            print(f"  - {dispositivo}")
 
 
 def ciclo() -> float:
@@ -75,12 +62,9 @@ def ciclo() -> float:
     Returns:
         float: Ciclo de iteración
     """
-    try:
-        ciclo: float = data["settings"]["ciclo_simulacion"]
-        print(f"El ciclo actual es de: {ciclo} s \n")
-        return ciclo
-    except Exception as e:
-        logger.error(f"Se ha producido un error en la lectura del ciclo: {e}")
+    ciclo: float = data["settings"]["ciclo_simulacion"]
+    print(f"El ciclo actual es de: {ciclo} s \n")
+    return ciclo
 
 
 def cambiar_ciclo(ciclo: float) -> None:
@@ -89,14 +73,10 @@ def cambiar_ciclo(ciclo: float) -> None:
     Args:
         ciclo (float): Ciclo de iteracion
     """
-    try:
-        data["settings"]["ciclo_simulacion"] = ciclo
-        with open(ruta, "w") as archivo:
-            yaml.dump(data, archivo, default_flow_style=False)
-        print("Datos modificados y almacenados correctamente")
-        logger.info("Se ha modificado correctamente el ciclo de ejecucion")
-    except Exception as e:
-        logger.error(f"Se ha producido un error en la generacion de nombres abreviados misiones: {e}")
+    data["settings"]["ciclo_simulacion"] = ciclo
+    with open(ruta, "w") as archivo:
+        yaml.dump(data, archivo, default_flow_style=False)
+    print(" Datos modificados y almacenados correctamente")
 
 
 def cambiar_min_archivos(archivos_min: int) -> None:
@@ -106,14 +86,10 @@ def cambiar_min_archivos(archivos_min: int) -> None:
     Args:
         archivos_min (int): recibe la cantidad de archivos minimos
     """
-    try:
-        data["settings"]["cantidad_min_archivos"] = archivos_min
-        with open(ruta, "w") as archivo:
-            yaml.dump(data, archivo, default_flow_style=False)
-        print("Cantidad minima de archivos - Modificados y almacenados correctamente")
-        logger.info("Cantidad Minima de archivos, modificados correctamente")
-    except Exception as e:
-        logger.error(f"Se ha producido un error en modificar la cantidad minima de archivos: {e}")
+    data["settings"]["cantidad_min_archivos"] = archivos_min
+    with open(ruta, "w") as archivo:
+        yaml.dump(data, archivo, default_flow_style=False)
+    print("Cantidad minima de archivos - Modificados y almacenados correctamente")
 
 
 def cambiar_max_archivos(archivos_max: int) -> None:
@@ -124,14 +100,10 @@ def cambiar_max_archivos(archivos_max: int) -> None:
         archivos_max (int): Cantidad maxima de archivos a
         editar en el archivo YAML
     """
-    try:
-        data["settings"]["cantidad_max_archivos"] = archivos_max
-        with open(ruta, "w") as archivo:
-            yaml.dump(data, archivo, default_flow_style=False)
-        print(" Datos modificados y almacenados correctamente")
-        logger.info("Cantidad Maxima de archivos, modificados correctamente")
-    except Exception as e:
-        logger.error(f"Se ha producido un error en modificar la cantidad maxima de archivos: {e}")
+    data["settings"]["cantidad_max_archivos"] = archivos_max
+    with open(ruta, "w") as archivo:
+        yaml.dump(data, archivo, default_flow_style=False)
+    print(" Datos modificados y almacenados correctamente")
 
 
 def nuevo_dispositivo(mision: int, nuevo_dispositivo: str) -> None:
@@ -145,14 +117,12 @@ def nuevo_dispositivo(mision: int, nuevo_dispositivo: str) -> None:
     """
     try:
         data["settings"]["misiones"][mision]["dispositivos"].append(nuevo_dispositivo)
-        mision: str = data["settings"]["misiones"][mision]
-        logger.info("Dispositivo añadido correctamente a la mision " + mision)
-        with open(ruta, "w") as archivo:
-            yaml.dump(data, archivo, default_flow_style=False)
-        print(f'Se añadió el dispositivo {nuevo_dispositivo} correctamente a la misión {mision}')
-        logger.info(f'Se añadió el dispositivo {nuevo_dispositivo} correctamente a la misión {mision}')
     except Exception as e:
-        logger.error(f"Se ha producido un error al ingresar un nuevo dispositivo: {e}")
+        data["settings"]["misiones"][mision]["dispositivos"] = []
+        data["settings"]["misiones"][mision]["dispositivos"].append(nuevo_dispositivo)
+    with open(ruta, "w") as archivo:
+        yaml.dump(data, archivo, default_flow_style=False)
+    print(f'Se añadió el dispositivo {nuevo_dispositivo} correctamente a la misión {mision}.')
 
 
 def eliminar_dispositivo(mision: int, dispositivo_a_eliminar: str) -> None:
@@ -162,14 +132,12 @@ def eliminar_dispositivo(mision: int, dispositivo_a_eliminar: str) -> None:
         dispositivo_a_eliminar (str): cadena de texto del dispositivo a eliminar
     """
     try:
-        dispo = data["settings"]["misiones"][mision]["dispositivos"].pop(dispositivo_a_eliminar)
+        data["settings"]["misiones"][mision]["dispositivos"].pop(dispositivo_a_eliminar)
         with open(ruta, "w") as archivo:
             yaml.dump(data, archivo, default_flow_style=False)
             print(" Datos modificados y almacenados correctamente")
-        logger.info("Se ha eliminado el dispositivo " + dispo)
     except Exception as e:
         print(f"el dispositivo seleccionado no existe para la misión {mision}")
-        logger.error(f"Se ha producido un error al eliminar un nuevo dispositivo: {e}")
 
 
 def dispositivos_mision(num_mision: int) -> List[str]:
@@ -181,13 +149,9 @@ def dispositivos_mision(num_mision: int) -> List[str]:
     Returns:
         List[str]: Listado de dispositivos con respecto a la mision
     """
-    try:
-        mision: List[str] = misiones()
-        dispositivos = data["settings"]["misiones"][mision[num_mision]]["dispositivos"]
-        logger.info("Lista de dispositivos desplegada")
-        return dispositivos
-    except Exception as e:
-        logger.error(f"Se ha producido un error al Listar las misiones: {e}")
+    mision: List[str] = misiones()
+    dispositivos = data["settings"]["misiones"][mision[num_mision]]["dispositivos"]
+    return dispositivos
 
 
 def estado() -> List[str]:
@@ -196,12 +160,8 @@ def estado() -> List[str]:
     Returns:
         List[str]: Listado de posibles estados
     """
-    try:
-        estados = data["settings"]["estado_de_dispositivo"]
-        logger.info("Listado de estados generado correctamente")
-        return estados
-    except Exception as e:
-        logger.error(f"Se ha producido un error al mostrar los estados: {e}")
+    estados = data["settings"]["estado_de_dispositivo"]
+    return estados
 
 
 def cantidad_min_archivos() -> int:
@@ -210,12 +170,8 @@ def cantidad_min_archivos() -> int:
     Returns:
         int: Cantidad Minima de archivos a generar
     """
-    try:
-        cantidad_min_archivos = data["settings"]["cantidad_min_archivos"]
-        logger.info("Cantidad minima de archivos tomados correctamente")
-        return int(cantidad_min_archivos)
-    except Exception as e:
-        logger.error(f"Se ha producido un error al tomar la cantidad minima de archivos: {e}")
+    cantidad_min_archivos = data["settings"]["cantidad_min_archivos"]
+    return int(cantidad_min_archivos)
 
 
 def cantidad_max_archivos() -> int:
@@ -225,12 +181,8 @@ def cantidad_max_archivos() -> int:
     Returns:
         int: Cantidad Maxima de archivos a generar
     """
-    try:
-        cantidad_max_archivos = data["settings"]["cantidad_max_archivos"]
-        logger.info("Cantidad Maxima de archivos tomados correctamente")
-        return int(cantidad_max_archivos)
-    except Exception as e:
-        logger.error(f"Se ha producido un error al tomar la cantidad maxima de archivos: {e}")
+    cantidad_max_archivos = data["settings"]["cantidad_max_archivos"]
+    return int(cantidad_max_archivos)
 
 
 def crear_dataFrame() -> str:
@@ -242,20 +194,17 @@ def crear_dataFrame() -> str:
     data_frame: List[str] = ["Mision", "Dispositivo", "Estado", "Cantidad_Eventos"]
     df: any = pd.DataFrame(columns=data_frame)
     nuevos_registros: List[str] = []
-    try:
-        for llave, valor in eventos.items():
-            mision, device, status = llave
-            cantidad: int = valor
-            nuevo_registro: dict[str, any] = {"Mision": mision, "Dispositivo": device, "Estado": status, "Cantidad_Eventos": cantidad}
-            nuevos_registros.append(nuevo_registro)
-        df: any = pd.concat([df, pd.DataFrame(nuevos_registros)], ignore_index=True)
-        logger.info("DataFrame creado correctamente")
-        return df
-    except Exception as e:
-        logger.error(f"Se ha generado un error al intentar generar un dataframe: {e}")
+    for llave, valor in eventos.items():
+        mision, device, status = llave
+        cantidad: int = valor
+        nuevo_registro: dict[str, any] = {"Mision": mision, "Dispositivo": device, "Estado": status, "Cantidad_Eventos": cantidad}
+        nuevos_registros.append(nuevo_registro)
+    df: any = pd.concat([df, pd.DataFrame(nuevos_registros)], ignore_index=True)
+    return df
 
 
 def analisis_eventos() -> dict:
+
     """Genera un Documento con el resumen y analisis de los eventos
 
     Returns:
@@ -263,26 +212,22 @@ def analisis_eventos() -> dict:
     """
     ruta_script: str = os.path.abspath(__file__)
     ruta_logs: str = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(ruta_script))), "Archivos", "Logs")
-    lista_carpetas: List[str] = [nombre for nombre in os.listdir(ruta_logs)]
+    lista_carpetas: List[str] = os.listdir(ruta_logs)
     registro_eventos = {}
-    try:
-        for archivo_carpeta in lista_carpetas:
-            ruta_carpeta: str = os.path.join(ruta_logs, archivo_carpeta)
-            lista_archivos: str = [archivo for archivo in os.listdir(ruta_carpeta) if archivo.endswith('.log')]
-            for a in lista_archivos:
-                ruta_archivos: str = os.path.join(ruta_carpeta, a)
-                with open(ruta_archivos, 'r') as arch_log:
-                    archivo: str = arch_log.read()
-                    registro_dict: str = json.loads(archivo)
-                    mision: str = registro_dict['mision']
-                    dispositivo: str = registro_dict['device_type']
-                    estado: str = registro_dict['device_status']
-                    llave: str = (mision, dispositivo, estado)
-                    registro_eventos[llave] = registro_eventos.get(llave, 0) + 1
-        logger.info("Se han analizado correctamente los registros")
-        return registro_eventos
-    except Exception as e:
-        logger.error(f"Se ha producido un error al analizar los eventos: {e}")
+    for archivo_carpeta in lista_carpetas:
+        ruta_carpeta: str = os.path.join(ruta_logs, archivo_carpeta)
+        lista_archivos: str = [archivo for archivo in os.listdir(ruta_carpeta) if archivo.endswith('.log')]
+        for a in lista_archivos:
+            ruta_archivos: str = os.path.join(ruta_carpeta, a)
+            with open(ruta_archivos, 'r') as arch_log:
+                archivo: str = arch_log.read()
+                registro_dict: str = json.loads(archivo)
+                mision: str = registro_dict['mision']
+                dispositivo: str = registro_dict['device_type']
+                estado: str = registro_dict['device_status']
+                llave: str = (mision, dispositivo, estado)
+                registro_eventos[llave] = registro_eventos.get(llave,0)+1
+    return registro_eventos
 
 
 def eventos() -> str:
@@ -291,14 +236,10 @@ def eventos() -> str:
     Returns:
         str: tabla de eventos de los dispositivos
     """
-    try:
-        df: str = crear_dataFrame()
-        df.set_index(['Mision', 'Dispositivo', 'Estado'], inplace=True)
-        tabla_eventos: any = df[['Cantidad_Eventos']].unstack().fillna(0).astype(int)
-        logger.info("Se ha generado correctamente la tabla de eventos")
-        return tabla_eventos
-    except Exception as e:
-        logger.error(f"Se ha producido un error al generar la tabla de eventos: {e}")
+    df: str = crear_dataFrame()
+    df.set_index(['Mision', 'Dispositivo', 'Estado'], inplace=True)
+    tabla_eventos: any = df[['Cantidad_Eventos']].unstack().fillna(0).astype(int)
+    return tabla_eventos
 
 
 def gestion_desconexiones() -> str:
@@ -307,14 +248,10 @@ def gestion_desconexiones() -> str:
     Returns:
         str: dispositivos en estado UNKW
     """
-    try:
-        dtf: str = crear_dataFrame()
-        df_filtrado: str = dtf[dtf['Estado'] == 'Unknown']
-        df_filtrado: str = df_filtrado.sort_values(by='Cantidad_Eventos', scending=False).head(10).groupby(['Mision', 'Dispositivo']).agg({'Cantidad_Eventos': 'sum'})
-        logger.info("Gestion de desconexiones generado correctamente")
-        return df_filtrado
-    except Exception as e:
-        logger.error(f"Se ha producido un error al generar la tabla de eventos: {e}")
+    dtf: str = crear_dataFrame()
+    df_filtrado: str = dtf[dtf['Estado']=='Unknown']
+    df_filtrado: str = df_filtrado.sort_values(by='Cantidad_Eventos', ascending=False).head(10).groupby(['Mision', 'Dispositivo']).agg({'Cantidad_Eventos': 'sum'})
+    return df_filtrado
 
 
 def dispositivos_inoperables() -> [str, str, float]:
@@ -323,53 +260,10 @@ def dispositivos_inoperables() -> [str, str, float]:
     Returns:
         [str, str, float]: retorna el normbre de la mision, sigue el dispositivo y finaliza con el porcentaje
     """
-    try:
-        data_total: str = crear_dataFrame()
-        df_inop: any = data_total[data_total['Estado'] == 'killed'].groupby(['Mision', 'Dispositivo']).agg({'Cantidad_Eventos': 'sum'})
-        porcentaje_inop: float = (int(df_inop.shape[0]) / int(data_total.shape[0])) * 100
-        logger.info('Se ha generado correctamente el reporte de dispositivos inoperables')
-        return df_inop, df_inop.shape[0], round(porcentaje_inop, 2)
-    except Exception as e:
-        logger.error(f"Se ha producido un error al generar las estadisticas de los dispositivos inoperables: {e}")
-
-
-# def Porcentajes() -> any:
-#     """Retorna una tabla con los porcentajes de cada mision, porecntajes de desconexion
-
-#     Returns:
-#         any: Porcentajes
-#     """
-#     try:
-#         data_total: str = crear_dataFrame()
-#         total_eventos: int = data_total['Cantidad_Eventos'].sum()
-#         formato_centro = lambda x: f'{"{:^35}".format(x)}'
-#         data_total['Porcentaje de datos Generados(%)'] = (data_total['Cantidad_Eventos'] / total_eventos * 100).apply(lambda x: round(x, 2)).apply(formato_centro)
-#         data_total: any = data_total.drop(['Estado','Cantidad_Eventos'], axis=1)
-#         data_total.set_index(['Mision', 'Dispositivo'], inplace=True)
-#         logger.info("Se ha generado correctamente los porcentajes de los datos (Configuracion/Porcentajes())")
-#         return data_total
-#     except Exception as e:
-#         logger.error(f"Se ha producido un error al generar los porcentajes (Configuracion/Porcentajes()): {e}")
-
-
-def Crear_copia() -> None:
-    """Crea una copia del archivo del ultimo reporte generado
-    """
-    try:
-        ruta_script: str = os.path.abspath(__file__)
-        ruta_reporte: str = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(ruta_script))), "Archivos", "Reportes")
-        lista_reporte: List[str] = [rep for rep in os.listdir(ruta_reporte) if rep.endswith('.log')]
-        archivo: str = lista_reporte[-1]
-        if lista_reporte:
-            archivo_original: str = os.path.join(ruta_reporte, archivo)
-            ruta_copia: str = os.path.join("Archivos", "Reportes", "Copias", f"COPIA-{archivo}")
-            shutil.copyfile(archivo_original, ruta_copia)
-            print("Copia creada exitosamente.")
-            logger.info("Copia creada exitosamente de el reporte de .logs")
-        else:
-            print("No se encontraron archivos .log para copiar.")
-    except Exception as e:
-        logger.error(f"Se ha producido un error al crear copia de .logs (Configuracion/Porcentajes()): {e}")
+    data_total: str = crear_dataFrame()
+    df_inop: any = data_total[data_total['Estado']=='killed'].groupby(['Mision', 'Dispositivo']).agg({'Cantidad_Eventos': 'sum'})
+    porcentaje_inop: float = (int(df_inop.shape[0])/int(data_total.shape[0]))*100
+    return df_inop, df_inop.shape[0], round(porcentaje_inop, 2)
 
 
 def Porcentajes() -> any:
@@ -378,18 +272,32 @@ def Porcentajes() -> any:
     Returns:
         any: Porcentajes
     """
-    try:
-        data_total: str = crear_dataFrame()
-        total_eventos: any = data_total['Cantidad_Eventos'].sum()
-        formato_centro: str = lambda x: f'{"{:^35}".format(x)}'
-        data_total['Porcentaje de datos Generados(%)'] = (data_total['Cantidad_Eventos'] / total_eventos * 100).apply(lambda x: round(x, 2)).apply(formato_centro)
-        data_total: any = data_total.drop(['Estado', 'Cantidad_Eventos'], axis=1)
-        df_colonymoon: any = data_total[data_total['Mision'] == 'ColonyMoon'].set_index('Dispositivo').drop('Mision', axis=1)
-        df_galaxytwo: any = data_total[data_total['Mision'] == 'GalaxyTwo'].set_index('Dispositivo').drop('Mision', axis=1)
-        df_orbione: any = data_total[data_total['Mision'] == 'OrbitOne'].set_index('Dispositivo').drop('Mision', axis=1)
-        df_vacmars: any = data_total[data_total['Mision'] == 'VacMars'].set_index('Dispositivo').drop('Mision', axis=1)
-        unk: any = data_total[data_total['Mision'] == 'UNKW'].set_index('Dispositivo').drop('Mision', axis=1)
-        logger.info("Se ha generado correctamente los porcentajes de los datos (Configuracion/Porcentajes())")
-        return df_colonymoon, df_galaxytwo, df_orbione, df_vacmars, unk
-    except Exception as e:
-        logger.error(f"Se ha producido un error al generar los porcentajes (Configuracion/Porcentajes()): {e}")
+    data_total = crear_dataFrame()
+    total_eventos = data_total['Cantidad_Eventos'].sum()
+    formato_centro = lambda x: f'{"{:^35}".format(x)}'
+    data_total['Porcentaje de datos Generados(%)'] = (data_total['Cantidad_Eventos'] / total_eventos * 100).apply(lambda x: round(x, 2)).apply(formato_centro)
+    data_total= data_total.drop(['Estado','Cantidad_Eventos'], axis=1)
+    df_colonymoon = data_total[data_total['Mision'] == 'ColonyMoon'].set_index('Dispositivo').drop('Mision', axis=1)
+    df_galaxytwo = data_total[data_total['Mision'] == 'GalaxyTwo'].set_index('Dispositivo').drop('Mision', axis=1)
+    df_orbione = data_total[data_total['Mision'] == 'OrbitOne'].set_index('Dispositivo').drop('Mision', axis=1)
+    df_vacmars = data_total[data_total['Mision'] == 'VacMars'].set_index('Dispositivo').drop('Mision', axis=1)
+    unk = data_total[data_total['Mision'] == 'UNKW'].set_index('Dispositivo').drop('Mision', axis=1)
+    return df_colonymoon,df_galaxytwo,df_orbione,df_vacmars,unk
+
+
+def Crear_copia() -> None:
+    """Crea una copia del archivo del ultimo reporte generado
+    """
+    ruta_script: str = os.path.abspath(__file__)
+    ruta_reporte = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(ruta_script))), "Archivos", "Reportes")
+    lista_reporte = [rep for rep in os.listdir(ruta_reporte) if rep.endswith('.log')]
+    archivo = lista_reporte[-1]
+    if lista_reporte:
+        archivo_original = os.path.join(ruta_reporte, archivo)
+        ruta_copia = os.path.join("Archivos", "Reportes", "Copias", f"COPIA-{archivo}") 
+        shutil.copyfile(archivo_original, ruta_copia)
+        print("Copia creada exitosamente.")
+    else:
+        print("No se encontraron archivos .log para copiar.")
+    
+

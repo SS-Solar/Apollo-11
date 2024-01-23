@@ -1,0 +1,47 @@
+ANALISIS DE EVENTOS:
+La informacion registrada a continuacion, muestra la cantidad de eventos por estado para cada dispositivo y mision
+                       Cantidad_Eventos                                           
+Estado                         Excelent Faulty Good Unknown Warning killed unknown
+Mision     Dispositivo                                                            
+ColonyMoon CM-ASC-CD                  0      0    0       1       0      0       0
+           CM-PRR-CD                  1      0    0       0       0      0       0
+           CM-PRR-PQM                 0      0    1       0       0      0       0
+GalaxyTwo  GT-S-EFAM                  0      0    0       0       1      0       0
+OrbitOne   OO-PRR-SPS                 0      1    0       0       0      0       0
+           OO-S-CD                    0      0    0       1       0      0       0
+UNKW       unknown                    0      0    0       0       0      0       1
+VacMars    VM-ASC-PQM                 0      0    0       0       0      1       0
+           VM-AT-SPS                  1      0    0       0       0      0       0
+
+GESTION DE DESCONEXIONES:
+Representa los dispositivos con un mayor numero de desconexiones
+                       Cantidad_Eventos
+Mision     Dispositivo                 
+ColonyMoon CM-ASC-CD                  1
+OrbitOne   OO-S-CD                    1
+
+Una vez analizadas todas las misiones de Apollo-11 se determina que hay 1 dispositivos inoperables,
+lo que corresponde al 11.11% de todos los dispositivos existentes
+
+DISPOSITIVOS INOPERABLES:
+                    Cantidad_Eventos
+Mision  Dispositivo                 
+VacMars VM-ASC-PQM                 1
+
+TABLA DE PORCENTAJES:
+La informacion resgitrada a continuacion contiene el registro de datos generados para cada dispositivo y misión con respecto a la cantidad total de datos.
+(                Porcentaje de datos Generados(%)
+Dispositivo                                     
+CM-PRR-CD                   11.11               
+CM-ASC-CD                   11.11               
+CM-PRR-PQM                  11.11               ,                 Porcentaje de datos Generados(%)
+Dispositivo                                     
+GT-S-EFAM                   11.11               ,                 Porcentaje de datos Generados(%)
+Dispositivo                                     
+OO-S-CD                     11.11               
+OO-PRR-SPS                  11.11               ,                 Porcentaje de datos Generados(%)
+Dispositivo                                     
+VM-AT-SPS                   11.11               
+VM-ASC-PQM                  11.11               ,                 Porcentaje de datos Generados(%)
+Dispositivo                                     
+unknown                     11.11               )
