@@ -7,6 +7,7 @@ import time
 import Archivos.Configuracion.Configuracion as Config
 import Archivos.Interfaz_Usuario.Interfaces as Menu
 import Archivos.Procesador.Generador as Procesador
+import Archivos.Procesador.Copia as Copia
 
 if __name__ == "__main__":
 
@@ -15,12 +16,12 @@ if __name__ == "__main__":
         Menu.menu_inicial()
         # TODO 1.distribuir y ejecutar el proceso seleccionado
         while True:
-            contador = 0
+            contador: int = 0
             lim_sup: int = Config.cantidad_max_archivos()
             lim_inf: int = Config.cantidad_min_archivos()
             cantidad_archivos: int = random.randint(lim_inf, lim_sup)
             print("Archivos de esta iteración: ", cantidad_archivos)
-            barra = tqdm(total=cantidad_archivos, desc="Procesando archivos:")
+            barra: any = tqdm(total=cantidad_archivos, desc="Procesando archivos:")
             for i in range(cantidad_archivos):
                 Procesador.generar_archivos()
                 barra.update(1)
@@ -32,6 +33,7 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         Procesador.generar_reportes()
         Menu.mostrar_reporte()
+        #Copia.copiar_archivos_logs()
         print("Programa cancelado. Saliendo...")
     except Exception as e:
         print("Ocurrió un error:", e)

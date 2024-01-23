@@ -4,9 +4,10 @@ import Archivos.Configuracion.Configuracion as Config
 import random
 import os
 import hashlib
+from typing import List
 
 
-def generar_hash():
+def generar_hash() -> str:
     """Genera hash
 
     Returns:
@@ -14,29 +15,26 @@ def generar_hash():
     """
     date_encoded:str = str(datetime.now().strftime("%d%m%y%H%M%S"))
     hasher:str = hashlib.sha1()
-    #hasher.update(date_encoded.encode())
     return hasher.hexdigest(), date_encoded
 
-#Datos a incluir en el archivo JSON
-def generar_archivos():
+
+def generar_archivos() -> None:
     """Genera los archivos de cada misión, organizandolo en carpetas y dandole numeros consecutivos
     """
-    hash_encoded = generar_hash()
-    mision = Config.misiones()
-    num_mis= len(mision)-1
-    aux= random.randint(0, num_mis)
-    mision = mision[aux]
-    dispositivo= Config.dispositivos_mision(aux)
-    num_dis = len(dispositivo)-1
-    dispositivo = dispositivo[random.randint(0, num_dis)]
-    estado= Config.estado()
-    num_estado= len(estado)-1
-    estado= estado[random.randint(0, num_estado)]
-    #Toma de fecha y hora actual 
-    actual= datetime.now()
-    actual = str(actual.strftime("%d%m%Y%H%M%S"))
+    hash_encoded: str = generar_hash()
+    mision: str = Config.misiones()
+    num_mis: int = len(mision)-1
+    aux: int = random.randint(0, num_mis)
+    mision: List[str] = mision[aux]
+    dispositivo: List[str] = Config.dispositivos_mision(aux)
+    num_dis: int = len(dispositivo)-1
+    dispositivo: List[str] = dispositivo[random.randint(0, num_dis)]
+    estado: List[str] =Config.estado()
+    num_estado:int = len(estado)-1
+    estado:List[str] = estado[random.randint(0, num_estado)]
+    actual:str = str(datetime.now().strftime("%d%m%Y%H%M%S"))
     if mision != "UNKW":
-        datos = {
+        datos: dict [str, str, str, str]= {
             "fecha": actual,
             "mision": mision,
             "device_type": dispositivo,
@@ -44,7 +42,7 @@ def generar_archivos():
             "hash": hash_encoded
                 }
     else :
-        datos = {
+        datos: dict [str, str, str, str]= {
             "fecha": str(datetime.now()),  # Obtiene la fecha actual como un string
             "mision": "UNKW",
             "device_type": "unknown",
@@ -52,46 +50,53 @@ def generar_archivos():
             "hash": "unknown"  # Tu hash específico aquí
                 }
     if mision == "UNKW":
-        nombre_archivo_log = os.path.join("Archivos/Logs/UNKW", f"APL-"+ mision +"-"+ cantidad_de_archivos_en_carpeta("Archivos/Logs/UNKW") +".log")
+        nombre_archivo_log: str = os.path.join("Archivos/Logs/UNKW", f"APL-"+ mision +"-"+ cantidad_de_archivos_en_carpeta("Archivos/Logs/UNKW") +".log")
     elif mision == "ColonyMoon":
-        nombre_archivo_log = os.path.join("Archivos/Logs/ColonyMoon", f"APL-"+ mision +"-"+ cantidad_de_archivos_en_carpeta("Archivos/Logs/ColonyMoon") +".log")
+        nombre_archivo_log: str = os.path.join("Archivos/Logs/ColonyMoon", f"APL-"+ mision +"-"+ cantidad_de_archivos_en_carpeta("Archivos/Logs/ColonyMoon") +".log")
     elif mision == "GalaxyTwo":
-        nombre_archivo_log = os.path.join("Archivos/Logs/GalaxyTwo", f"APL-"+ mision +"-"+ cantidad_de_archivos_en_carpeta("Archivos/Logs/GalaxyTwo") +".log")
+        nombre_archivo_log: str = os.path.join("Archivos/Logs/GalaxyTwo", f"APL-"+ mision +"-"+ cantidad_de_archivos_en_carpeta("Archivos/Logs/GalaxyTwo") +".log")
     elif mision == "OrbitOne":
-        nombre_archivo_log = os.path.join("Archivos/Logs/OrbitOne", f"APL-"+ mision +"-"+ cantidad_de_archivos_en_carpeta("Archivos/Logs/OrbitOne") +".log")
+        nombre_archivo_log: str = os.path.join("Archivos/Logs/OrbitOne", f"APL-"+ mision +"-"+ cantidad_de_archivos_en_carpeta("Archivos/Logs/OrbitOne") +".log")
     elif mision == "VacMars":
-        nombre_archivo_log = os.path.join("Archivos/Logs/VacMars", f"APL-"+ mision +"-"+ cantidad_de_archivos_en_carpeta("Archivos/Logs/VacMars") +".log")
+        nombre_archivo_log: str = os.path.join("Archivos/Logs/VacMars", f"APL-"+ mision +"-"+ cantidad_de_archivos_en_carpeta("Archivos/Logs/VacMars") +".log")
     
     with open(nombre_archivo_log,"a") as archivo_log:
         json.dump(datos, archivo_log)
         archivo_log.write("\n")
-        
-def generar_reportes():
-    a_eventos = Config.eventos()
-    #.to_string(index=False)
-    g_desconexiones= Config.gestion_desconexiones()
+
+
+def generar_reportes() -> None:
+    """Generacion de reportes analizando los archivos que hay en las carpetas de logs, a 
+    a su vez creado archivo de reportes con el fin de almacenar un resumen de los resultados
+    """
+    a_eventos: str = Config.eventos()
+    g_desconexiones: str= Config.gestion_desconexiones()
     tabla, d_inoperables, per_inoperables = Config.dispositivos_inoperables()
-    cm,gt,ob,vm,unk= Config.Porcentajes()
+    porcentajes: float = Config.Porcentajes()
     hash, date = generar_hash()
-    nombre_reporte= os.path.join("Archivos","Reportes", f"APLSTATS-{date}.log") 
+    nombre_reporte: str = os.path.join("Archivos","Reportes", f"APLSTATS-{date}.log") 
     with open(nombre_reporte, "a") as reporte:
         reporte.write(f"ANALISIS DE EVENTOS:\nLa informacion registrada a continuacion, muestra la cantidad de eventos por estado para cada dispositivo y mision\n{a_eventos}"'\n''\n'
                     f"GESTION DE DESCONEXIONES:\nRepresenta los dispositivos con un mayor numero de desconexiones\n{g_desconexiones}"'\n''\n'
                     f"Una vez analizadas todas las misiones de Apollo-11 se determina que hay {d_inoperables} dispositivos inoperables,\nlo que corresponde al {per_inoperables}% de todos los dispositivos existentes"'\n''\n'
                     f"DISPOSITIVOS INOPERABLES:\n{tabla}"'\n''\n'
-                    f"La informacion registrada acontinuacion muestra el porcentaje de datos gerenados para cada mision y dispositivo"'\n''\n'
-                    f"COLONYMOON:\n\n{cm}\n\n"
-                    f"GALAXYTWO:\n\n{gt}\n\n"
-                    f"ORBITONE:\n\n{ob}\n\n"
-                    f"VACMARS:\n\n{vm}\n\n"
-                    f"UNKW:\n\n{unk}\n\n")
+                    f"TABLA DE PORCENTAJES:\nLa informacion resgitrada a continuacion contiene el registro de datos generados para cada dispositivo y misión con respecto a la cantidad total de datos.\n{porcentajes}")
     print(f"Estadisticas registrados en {nombre_reporte}")
 
-def cantidad_de_archivos_en_carpeta(carpeta):
+
+def cantidad_de_archivos_en_carpeta(carpeta: str) -> str:
+    """ Revisa la carpeta en especifico y a su vez retorna el numero de la cantidad de archivos que hay
+    en dicha carpeta
+
+    Args:
+        carpeta (str): ruta relativa de la carpeta
+
+    Returns:
+        str: retorna el numero de la cantidad de archivos en la carpeta
+    """
     try:
-        archivos = os.listdir(carpeta)
-        archivos = [archivo for archivo in archivos if os.path.isfile(os.path.join(carpeta, archivo))]
+        archivos: str = os.listdir(carpeta)
+        archivos: str = [archivo for archivo in archivos if os.path.isfile(os.path.join(carpeta, archivo))]
         return str(len(archivos))
     except FileNotFoundError:
-
         return str(0)
