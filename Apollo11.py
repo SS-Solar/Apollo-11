@@ -30,7 +30,6 @@ if __name__ == "__main__":
             print("Si desea Terminar de tomar datos, presionar CTRL+C y se generara el reporte")
             time.sleep(Config.ciclo())
     except KeyboardInterrupt:
-        # Captura la excepción de interrupción del teclado (Ctrl+C)
         Procesador.generar_reportes()
         Menu.mostrar_reporte()
         print("Programa cancelado. Saliendo...")
