@@ -33,7 +33,7 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         Procesador.generar_reportes()
         Menu.mostrar_reporte()
-        #Copia.copiar_archivos_logs()
+        Copia.copiar_archivos_logs()
         print("Programa cancelado. Saliendo...")
     except Exception as e:
         print("Ocurrió un error:", e)
