@@ -272,13 +272,17 @@ def Porcentajes() -> any:
     Returns:
         any: Porcentajes
     """
-    data_total: str = crear_dataFrame()
-    total_eventos: int = data_total['Cantidad_Eventos'].sum()
+    data_total = crear_dataFrame()
+    total_eventos = data_total['Cantidad_Eventos'].sum()
     formato_centro = lambda x: f'{"{:^35}".format(x)}'
     data_total['Porcentaje de datos Generados(%)'] = (data_total['Cantidad_Eventos'] / total_eventos * 100).apply(lambda x: round(x, 2)).apply(formato_centro)
-    data_total: any = data_total.drop(['Estado','Cantidad_Eventos'], axis=1)
-    data_total.set_index(['Mision', 'Dispositivo'], inplace=True)
-    return data_total
+    data_total= data_total.drop(['Estado','Cantidad_Eventos'], axis=1)
+    df_colonymoon = data_total[data_total['Mision'] == 'ColonyMoon'].set_index('Dispositivo').drop('Mision', axis=1)
+    df_galaxytwo = data_total[data_total['Mision'] == 'GalaxyTwo'].set_index('Dispositivo').drop('Mision', axis=1)
+    df_orbione = data_total[data_total['Mision'] == 'OrbitOne'].set_index('Dispositivo').drop('Mision', axis=1)
+    df_vacmars = data_total[data_total['Mision'] == 'VacMars'].set_index('Dispositivo').drop('Mision', axis=1)
+    unk = data_total[data_total['Mision'] == 'UNKW'].set_index('Dispositivo').drop('Mision', axis=1)
+    return df_colonymoon,df_galaxytwo,df_orbione,df_vacmars,unk
 
 
 def Crear_copia() -> None:
