@@ -1,40 +1,50 @@
-# librerías y dependencias Usadas
 import traceback
 import random
 from tqdm import tqdm
 import time
-# Importacion de Clases y metodos
+import logging
+from typing import NoReturn
+
+# Importación de Clases y métodos
 import Archivos.Configuracion.Configuracion as Config
 import Archivos.Interfaz_Usuario.Interfaces as Menu
 import Archivos.Procesador.Generador as Procesador
 import Archivos.Procesador.Copia as Copia
 
-if __name__ == "__main__":
+# Configuración del logging
+logging.basicConfig(level=logging.INFO,
+                    format='%(asctime)s - %(levelname)s - %(message)s')
 
+def main() -> NoReturn:
     try:
-        # TODO 0.configurar y obtener parametros
+        # Configurar y obtener parámetros
         Menu.menu_inicial()
-        # TODO 1.distribuir y ejecutar el proceso seleccionado
+
+        # Distribuir y ejecutar el proceso seleccionado
         while True:
             contador: int = 0
             lim_sup: int = Config.cantidad_max_archivos()
             lim_inf: int = Config.cantidad_min_archivos()
             cantidad_archivos: int = random.randint(lim_inf, lim_sup)
-            print("Archivos de esta iteración: ", cantidad_archivos)
+            logging.info("Archivos de esta iteración: %d", cantidad_archivos)
             barra: any = tqdm(total=cantidad_archivos, desc="Procesando archivos:")
-            for i in range(cantidad_archivos):
+            
+            for _ in range(cantidad_archivos):
                 Procesador.generar_archivos()
                 barra.update(1)
                 time.sleep(0.05)
             barra.close()
-            print("Iteracion Completada.")
-            print("Si desea Terminar de tomar datos, presionar CTRL+C y se generara el reporte")
+            logging.info("Iteracion Completada.")
+            logging.info("Si desea Terminar de tomar datos, presionar CTRL+C y se generara el reporte")
             time.sleep(Config.ciclo())
     except KeyboardInterrupt:
         Procesador.generar_reportes()
         Menu.mostrar_reporte()
         Copia.copiar_archivos_logs()
-        print("Programa cancelado. Saliendo...")
+        logging.info("Programa cancelado. Saliendo...")
     except Exception as e:
-        print("Ocurrió un error:", e)
-        print(traceback.format_exc())
+        logging.error("Ocurrió un error: %s", e)
+        logging.error(traceback.format_exc())
+
+if __name__ == "__main__":
+    main()
