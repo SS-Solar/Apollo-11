@@ -7,13 +7,15 @@ from typing import List
 import shutil
 from Archivos.Configuracion.logger import logger
 
-
 # Variables locales usadas
+
 misiones_ar = List[str]
 dispositivos_ar = List[str]
 ruta_absoluta = os.path.dirname(os.path.abspath(__file__))
 ruta = os.path.join(ruta_absoluta, 'config.yaml')
+
 # Apertura de archivo de configuracion para su respectivo uso
+
 with open(ruta, "r") as file:
     data = yaml.safe_load(file)
 
@@ -28,7 +30,7 @@ def misiones() -> List[str]:
         misiones_ar = []
         for misiones in data["settings"]["misiones"]:
             nombre_mision: str = misiones
-            misiones_ar.append(nombre_mision)
+        misiones_ar.append(nombre_mision)
         logger.info("Listado de misiones Creado")
         return misiones_ar
     except Exception as e:
@@ -310,7 +312,7 @@ def gestion_desconexiones() -> any:
     try:
         dtf: any = crear_dataFrame()
         df_filtrado: any = dtf[dtf['Estado'] == 'Unknown']
-        df_filtrado: str = df_filtrado.sort_values(by = 'Cantidad_Eventos', ascending = False).head(10).groupby(['Mision', 'Dispositivo']).agg({'Cantidad_Eventos': 'sum'})
+        df_filtrado: str = df_filtrado.sort_values(by='Cantidad_Eventos', ascending=False).head(10).groupby(['Mision', 'Dispositivo']).agg({'Cantidad_Eventos': 'sum'})
         logger.info("Gestion de desconexiones generado correctamente")
         return df_filtrado
     except Exception as e:
@@ -383,12 +385,12 @@ def Porcentajes() -> any:
         total_eventos: any = data_total['Cantidad_Eventos'].sum()
         formato_centro: str = lambda x: f'{"{:^35}".format(x)}'
         data_total['Porcentaje de datos Generados(%)'] = (data_total['Cantidad_Eventos'] / total_eventos * 100).apply(lambda x: round(x, 2)).apply(formato_centro)
-        data_total: any = data_total.drop(['Estado', 'Cantidad_Eventos'], axis = 1)
-        df_colonymoon: any = data_total[data_total['Mision'] == 'ColonyMoon'].set_index('Dispositivo').drop('Mision', axis = 1)
-        df_galaxytwo: any = data_total[data_total['Mision'] == 'GalaxyTwo'].set_index('Dispositivo').drop('Mision', axis = 1)
-        df_orbione: any = data_total[data_total['Mision'] == 'OrbitOne'].set_index('Dispositivo').drop('Mision', axis = 1)
-        df_vacmars: any = data_total[data_total['Mision'] == 'VacMars'].set_index('Dispositivo').drop('Mision', axis = 1)
-        unk: any = data_total[data_total['Mision'] == 'UNKW'].set_index('Dispositivo').drop('Mision', axis = 1)
+        data_total: any = data_total.drop(['Estado', 'Cantidad_Eventos'], axis=1)
+        df_colonymoon: any = data_total[data_total['Mision'] == 'ColonyMoon'].set_index('Dispositivo').drop('Mision', axis=1)
+        df_galaxytwo: any = data_total[data_total['Mision'] == 'GalaxyTwo'].set_index('Dispositivo').drop('Mision', axis=1)
+        df_orbione: any = data_total[data_total['Mision'] == 'OrbitOne'].set_index('Dispositivo').drop('Mision', axis=1)
+        df_vacmars: any = data_total[data_total['Mision'] == 'VacMars'].set_index('Dispositivo').drop('Mision', axis=1)
+        unk: any = data_total[data_total['Mision'] == 'UNKW'].set_index('Dispositivo').drop('Mision', axis=1)
         logger.info("Se ha generado correctamente los porcentajes de los datos")
         return df_colonymoon, df_galaxytwo, df_orbione, df_vacmars, unk
     except Exception as e:
