@@ -34,12 +34,14 @@ def mostrar_reporte() -> None:
         if archivos:
             ultimo_archivo = archivos[-1]
             with open(os.path.join(carpeta, ultimo_archivo), 'r') as file:
-                contenido = file.read()
-            logging.info("\n" + contenido)
+                contenido:str = file.read()
+            logging.info("Se ha mostrado el reporte correctamente en consola")
         else:
-            logging.info("La carpeta está vacía o no contiene archivos.")
+            logging.warning("La carpeta está vacía o no contiene archivos.")
+        print(contenido)
     except Exception as e:
         logging.error("Error al mostrar el reporte", exc_info=True)
+
 
 def menu_inicial() -> None:
     """Genera el menú inicial que se ve desde consola."""
@@ -68,5 +70,6 @@ def menu_inicial() -> None:
             elif opcion == "6":
                 Config.Crear_copia()
             elif opcion != "9":
+                print("Opción errónea, inténtelo otra vez.")
                 logging.info("Opción errónea, inténtelo otra vez.")
                     
