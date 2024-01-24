@@ -1,8 +1,11 @@
-from art import text2art
-from typing import List
-import Archivos.Configuracion.Configuracion as Config
+import logging
 import os
-# from typing import List
+from art import text2art
+from typing import List 
+import Archivos.Configuracion.Configuracion as Config
+
+# Configuración del logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 
 def apollo11() -> None:
@@ -22,68 +25,48 @@ def bienvenido() -> None:
 
 
 def mostrar_reporte() -> None:
-    """Muestra el ultimo reporte generado
-    """
-    carpeta: str = 'Archivos/Reportes/'
-    archivos: List[str] = os.listdir(carpeta)
-    archivos = [archivo for archivo in archivos if os.path.isfile(os.path.join(carpeta, archivo))]
-    archivos.sort(key=lambda x: os.path.getmtime(os.path.join(carpeta, x)))
-    if archivos:
-        ultimo_archivo: str = archivos[-1]
-    else:
-        print("La carpeta está vacía o no contiene archivos.")
-    with open('Archivos/Reportes/' + ultimo_archivo, 'r') as file:
-        contenido: str = file.read()
-    print(contenido)
-
+    """Muestra el último reporte generado."""
+    carpeta = 'Archivos/Reportes/'
+    try:
+        archivos = os.listdir(carpeta)
+        archivos = [archivo for archivo in archivos if os.path.isfile(os.path.join(carpeta, archivo))]
+        archivos.sort(key=lambda x: os.path.getmtime(os.path.join(carpeta, x)))
+        if archivos:
+            ultimo_archivo = archivos[-1]
+            with open(os.path.join(carpeta, ultimo_archivo), 'r') as file:
+                contenido = file.read()
+            logging.info("\n" + contenido)
+        else:
+            logging.info("La carpeta está vacía o no contiene archivos.")
+    except Exception as e:
+        logging.error("Error al mostrar el reporte", exc_info=True)
 
 def menu_inicial() -> None:
-    """Genera el menu inicial que se ve desde consola
-    """
+    """Genera el menú inicial que se ve desde consola."""
     bienvenido()
     apollo11()
     Config.dispositivos()
     Config.ciclo()
-    nombre = input("¿DESEA CONTINUAR CON LOS ANTERIORES DATOS? [y/n]: ")
-    if (nombre == "n"):
-        opcion: str = "0"
-        while (not (opcion == 9)):
-            opcion = input("Que informacióm desea cambiar?\n 1. Ciclo de  tiempo (s)\n 2. Eliminar Dispositivos \n 3. Añadir un nuevo dispositivo \n 4. Cambiar cantidad minima de archivos a generar \n 5. Cambiar cantidad maxima de archivos a generar \n 6. Crear copia del ultimo reporte disponible \n 9. Seguir a la generacion de archivos \n")
+    nombre = input(" ¿DESEA CONTINUAR CON LOS ANTERIORES DATOS? [y/n]: ")
+    if nombre.lower() == "n":
+        opcion = "0"
+        while opcion != "9":
+            opcion = input("Qué información desea cambiar?\n 1. Ciclo de tiempo (s)\n 2. Eliminar Dispositivos\n 3. Añadir un nuevo dispositivo\n 4. Cambiar cantidad mínima de archivos a generar\n 5. Cambiar cantidad máxima de archivos a generar\n 6. Crear copia del último reporte disponible\n 9. Seguir a la generación de archivos\n")
+            
+            # Las siguientes operaciones se realizan en el módulo de configuración, se asume que están correctamente ajustadas con logging.
             if opcion == "1":
-                ciclo: int = input("Ingrese nuevo ciclo de tiempo: ")
+                ciclo = input("Ingrese nuevo ciclo de tiempo: ")
                 Config.cambiar_ciclo(float(ciclo))
             elif opcion == "2":
-                misiones: str = Config.misiones()
-                print("A que mision desea eliminar un dispositivo?")
-                for i, y in enumerate(misiones):
-                    print(f"{i + 1}. {y}")
-                    mision: int = int(input("Ingrese opcion de misión de donde desea eliminar el dispositivo: "))
-                    dispositivos: List[str] = Config.dispositivos_mision(mision - 1)
-                    print("¿Cuál dispositivo desea eliminar?")
-                    for j, k in enumerate(dispositivos):
-                        print(f"{j + 1}. {k}")
-                    dispositivo: int = int(input("Ingrese opcion del dispositivo que desea eliminar: "))
-                    Config.eliminar_dispositivo(misiones[mision - 1], dispositivo - 1)
+                Config.menu_eliminar_dispositivo()
             elif opcion == "3":
-                misiones = Config.misiones()
-                print("A que mision desea añadir un dispositivo?")
-                for i, y in enumerate(misiones):
-                    print(f"{i+1}. {y}")
-                mision = int(input("(ingrese un número de opción): "))
-                dispositivo = input(" Ingrese el nombre del nuevo dispositivo:  ")
-                mision = misiones[mision - 1]
-                Config.nuevo_dispositivo(mision, dispositivo)
+                Config.menu_nuevo_dispositivo()
             elif opcion == "4":
-                cantidad_min_archivos: int = int(input("Ingrese nueva cantidad minima de archivos a generar: "))
-                Config.cambiar_min_archivos(cantidad_min_archivos)
+                Config.menu_cambiar_min_archivos()
             elif opcion == "5":
-                cantidad_max_archivos: int = int(input("Ingrese nueva cantidad maxima de archivos a generar: "))
-                Config.cambiar_max_archivos(cantidad_max_archivos)
+                Config.menu_cambiar_max_archivos()
             elif opcion == "6":
                 Config.Crear_copia()
-                print("Copia creada con exito")
-            elif opcion=="9":
-                break
-            else: 
-                print("Opcion erronea, intentalo otra vez")
+            elif opcion != "9":
+                logging.info("Opción errónea, inténtelo otra vez.")
                     
