@@ -5,14 +5,16 @@ import time
 from typing import NoReturn
 
 # Importación de Clases y métodos
-import Archivos.Configuracion.Configuracion as Config
+from Archivos.Configuracion.Configuracion import Configuracion
+#import Archivos.Configuracion.Configuracion as Configuracion
 import Archivos.Interfaz_Usuario.Interfaces as Menu
 import Archivos.Procesador.Generador as Procesador
 import Archivos.Procesador.Copia as Copia
-from Archivos.Configuracion.logger import logger
+from Archivos.Configuracion.Logger import Logger
 
 # Configuración del logger
-
+logger = Logger
+Config = Configuracion()
 
 def main() -> NoReturn:
     try:
@@ -26,7 +28,7 @@ def main() -> NoReturn:
             lim_sup: int = Config.cantidad_max_archivos()
             lim_inf: int = Config.cantidad_min_archivos()
             cantidad_archivos: int = random.randint(lim_inf, lim_sup)
-            print("Archivos de esta iteración: %d", cantidad_archivos)
+            print("Archivos de esta iteración: ", cantidad_archivos)
             logger.info("Archivos de esta iteración: %d", cantidad_archivos)
             barra: any = tqdm(total = cantidad_archivos, desc = "Procesando archivos:")
             for _ in range(cantidad_archivos):

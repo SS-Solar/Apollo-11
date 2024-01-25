@@ -1,13 +1,17 @@
 import json
 from datetime import datetime
-import Archivos.Configuracion.Configuracion as Config
+#import Archivos.Configuracion.Configuracion as Config
+from Archivos.Configuracion.Configuracion import Configuracion
 import random
 import os
 import hashlib
 from typing import List
-from Archivos.Configuracion.logger import logger
+from Archivos.Configuracion.Logger import Logger
 
+logger = Logger
+Config = Configuracion()
 
+@staticmethod
 def generar_hash() -> str:
     """Genera hash
 
@@ -18,7 +22,7 @@ def generar_hash() -> str:
     hasher:str = hashlib.sha1()
     return hasher.hexdigest(), date_encoded
 
-
+@staticmethod
 def generar_archivos() -> None:
     """Genera los archivos de cada misión, organizandolo en carpetas y dandole numeros consecutivos
     """
@@ -69,7 +73,7 @@ def generar_archivos() -> None:
     except Exception as e:
         logger.error("Error en la generacion de archivos: ", e)
 
-
+@staticmethod
 def generar_reportes() -> None:
 
     """Generacion de reportes analizando los archivos que hay en las carpetas de logs, a 
@@ -94,7 +98,7 @@ def generar_reportes() -> None:
         logger.error("Error en la generacion de reportes: ", e)
         
 
-
+@staticmethod
 def cantidad_de_archivos_en_carpeta(carpeta: str) -> str:
     """ Revisa la carpeta en especifico y a su vez retorna el numero de la cantidad de archivos que hay
     en dicha carpeta

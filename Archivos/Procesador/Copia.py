@@ -2,10 +2,12 @@ import shutil
 import os
 from datetime import datetime
 from typing import List
-import Archivos.Configuracion.Configuracion as Config
-from Archivos.Configuracion.logger import logger
+#import Archivos.Configuracion.Configuracion as Config
+from Archivos.Configuracion.Configuracion import Configuracion
+from Archivos.Configuracion.Logger import Logger
 
-
+logger = Logger
+Config = Configuracion()
 def copiar_archivos_logs() -> None:
     """Copia los archivos logs en otra carpeta
     """

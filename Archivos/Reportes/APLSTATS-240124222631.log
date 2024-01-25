@@ -1,0 +1,92 @@
+ANALISIS DE EVENTOS:
+La informacion registrada a continuacion, muestra la cantidad de eventos por estado para cada dispositivo y mision
+                    Cantidad_Eventos                                   
+Estado                      Excelent Faulty Good Unknown Warning killed
+Mision  Dispositivo                                                    
+VacMars VM-ASC-CD                  1      1    0       0       1      0
+        VM-ASC-PQM                 0      1    0       0       1      0
+        VM-AT-CD                   0      0    0       2       0      1
+        VM-AT-OC                   0      0    0       1       0      1
+        VM-AT-SL                   1      1    1       1       0      1
+        VM-AT-SPS                  0      0    0       1       0      0
+        VM-AT-ST                   0      1    2       1       0      0
+        VM-AT-VS                   1      0    1       0       1      0
+        VM-AT-VaT                  1      0    1       0       1      1
+        VM-CMS-OC                  0      1    0       0       0      1
+        VM-CMS-PS                  2      1    0       0       1      0
+        VM-CMS-SPS                 1      0    0       0       2      0
+        VM-CMS-TS                  0      0    0       1       1      0
+        VM-CMS-WTP                 0      0    0       0       1      1
+
+GESTION DE DESCONEXIONES:
+Representa los dispositivos con un mayor numero de desconexiones
+                    Cantidad_Eventos
+Mision  Dispositivo                 
+VacMars VM-AT-CD                   2
+        VM-AT-OC                   1
+        VM-AT-SL                   1
+        VM-AT-SPS                  1
+        VM-AT-ST                   1
+        VM-CMS-TS                  1
+
+Una vez analizadas todas las misiones de Apollo-11 se determina que hay 6 dispositivos inoperables,
+lo que corresponde al 16.67% de todos los dispositivos existentes
+
+DISPOSITIVOS INOPERABLES:
+                    Cantidad_Eventos
+Mision  Dispositivo                 
+VacMars VM-AT-CD                   1
+        VM-AT-OC                   1
+        VM-AT-SL                   1
+        VM-AT-VaT                  1
+        VM-CMS-OC                  1
+        VM-CMS-WTP                 1
+
+TABLA DE PORCENTAJES:
+La informacion resgitrada a continuacion contiene el registro de datos generados para cada dispositivo y misión con respecto a la cantidad total de datos.
+(Empty DataFrame
+Columns: [Porcentaje de datos Generados(%)]
+Index: [], Empty DataFrame
+Columns: [Porcentaje de datos Generados(%)]
+Index: [], Empty DataFrame
+Columns: [Porcentaje de datos Generados(%)]
+Index: [],                 Porcentaje de datos Generados(%)
+Dispositivo                                     
+VM-AT-CD                     2.5                
+VM-ASC-CD                    2.5                
+VM-CMS-OC                    2.5                
+VM-AT-SL                     2.5                
+VM-CMS-SPS                   2.5                
+VM-ASC-CD                    2.5                
+VM-AT-ST                     2.5                
+VM-ASC-PQM                   2.5                
+VM-ASC-PQM                   2.5                
+VM-AT-SL                     2.5                
+VM-AT-CD                     5.0                
+VM-AT-VS                     2.5                
+VM-AT-SL                     2.5                
+VM-AT-VaT                    2.5                
+VM-CMS-TS                    2.5                
+VM-AT-ST                     5.0                
+VM-AT-OC                     2.5                
+VM-AT-SPS                    2.5                
+VM-CMS-PS                    5.0                
+VM-CMS-SPS                   5.0                
+VM-AT-OC                     2.5                
+VM-AT-SL                     2.5                
+VM-AT-VS                     2.5                
+VM-AT-VaT                    2.5                
+VM-CMS-WTP                   2.5                
+VM-CMS-OC                    2.5                
+VM-CMS-PS                    2.5                
+VM-CMS-WTP                   2.5                
+VM-AT-VaT                    2.5                
+VM-AT-VS                     2.5                
+VM-ASC-CD                    2.5                
+VM-CMS-TS                    2.5                
+VM-AT-SL                     2.5                
+VM-CMS-PS                    2.5                
+VM-AT-ST                     2.5                
+VM-AT-VaT                    2.5                , Empty DataFrame
+Columns: [Porcentaje de datos Generados(%)]
+Index: [])

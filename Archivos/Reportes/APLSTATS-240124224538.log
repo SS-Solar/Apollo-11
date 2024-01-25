@@ -1,0 +1,115 @@
+ANALISIS DE EVENTOS:
+La informacion registrada a continuacion, muestra la cantidad de eventos por estado para cada dispositivo y mision
+                       Cantidad_Eventos                                           
+Estado                         Excelent Faulty Good Unknown Warning killed unknown
+Mision     Dispositivo                                                            
+ColonyMoon CM-ASC-CD                  0      0    0       0       0      1       0
+           CM-ASC-SPS                 1      0    0       0       0      0       0
+           CM-KSS-ASS                 1      0    0       0       0      0       0
+           CM-PRR-PQM                 0      0    1       0       0      1       0
+           CM-PRR-PS                  1      0    1       0       0      0       0
+           CM-PRR-PSW                 1      0    0       0       0      0       0
+           CM-PRR-TS                  0      0    0       0       0      1       0
+           CM-S-EFAC                  0      1    0       0       0      0       0
+           CM-S-PQM                   1      0    0       0       0      0       0
+GalaxyTwo  GT-ASC-PQM                 1      0    1       0       0      0       0
+           GT-PRR-CD                  0      2    1       0       1      0       0
+           GT-PRR-PQM                 0      0    0       0       1      0       0
+           GT-PRR-PS                  0      0    0       1       0      0       0
+           GT-PRR-TS                  0      0    0       0       1      0       0
+           GT-S-CD                    0      1    0       0       0      0       0
+           GT-S-EFAC                  0      0    1       0       0      0       0
+           GT-S-EFAM                  1      0    0       0       0      0       0
+           GT-S-PQM                   0      0    0       0       1      0       0
+           GT-S-SPS                   0      0    0       0       0      1       0
+OrbitOne   OO-ASC-CD                  0      0    0       0       1      0       0
+           OO-ASC-SPS                 0      0    1       0       1      0       0
+           OO-PRR-OC                  1      0    0       0       0      0       0
+           OO-PRR-PS                  1      0    0       0       0      0       0
+           OO-PRR-SPS                 1      0    1       0       0      0       0
+           OO-S-EFAM                  1      0    1       0       1      1       0
+           OO-S-PQM                   0      0    1       0       0      0       0
+UNKW       unknown                    0      0    0       0       0      0      10
+VacMars    VM-AT-CD                   0      1    0       1       0      0       0
+           VM-AT-SL                   0      0    0       1       0      0       0
+           VM-AT-VaT                  1      0    0       0       0      0       0
+           VM-CMS-OC                  1      0    0       0       0      0       0
+           VM-CMS-PQM                 1      0    1       0       0      0       0
+           VM-CMS-RPS                 0      1    1       0       0      0       0
+           VM-CMS-SPS                 0      2    0       0       0      0       0
+
+GESTION DE DESCONEXIONES:
+Representa los dispositivos con un mayor numero de desconexiones
+                      Cantidad_Eventos
+Mision    Dispositivo                 
+GalaxyTwo GT-PRR-PS                  1
+VacMars   VM-AT-CD                   1
+          VM-AT-SL                   1
+
+Una vez analizadas todas las misiones de Apollo-11 se determina que hay 5 dispositivos inoperables,
+lo que corresponde al 10.64% de todos los dispositivos existentes
+
+DISPOSITIVOS INOPERABLES:
+                       Cantidad_Eventos
+Mision     Dispositivo                 
+ColonyMoon CM-ASC-CD                  1
+           CM-PRR-PQM                 1
+           CM-PRR-TS                  1
+GalaxyTwo  GT-S-SPS                   1
+OrbitOne   OO-S-EFAM                  1
+
+TABLA DE PORCENTAJES:
+La informacion resgitrada a continuacion contiene el registro de datos generados para cada dispositivo y misión con respecto a la cantidad total de datos.
+(                Porcentaje de datos Generados(%)
+Dispositivo                                     
+CM-PRR-PSW                  1.72                
+CM-KSS-ASS                  1.72                
+CM-PRR-PQM                  1.72                
+CM-S-EFAC                   1.72                
+CM-ASC-CD                   1.72                
+CM-PRR-PQM                  1.72                
+CM-PRR-PS                   1.72                
+CM-PRR-PS                   1.72                
+CM-ASC-SPS                  1.72                
+CM-S-PQM                    1.72                
+CM-PRR-TS                   1.72                ,                 Porcentaje de datos Generados(%)
+Dispositivo                                     
+GT-PRR-PS                   1.72                
+GT-PRR-CD                   1.72                
+GT-ASC-PQM                  1.72                
+GT-S-EFAM                   1.72                
+GT-S-SPS                    1.72                
+GT-S-CD                     1.72                
+GT-PRR-CD                   3.45                
+GT-S-PQM                    1.72                
+GT-S-EFAC                   1.72                
+GT-PRR-PQM                  1.72                
+GT-ASC-PQM                  1.72                
+GT-PRR-CD                   1.72                
+GT-PRR-TS                   1.72                ,                 Porcentaje de datos Generados(%)
+Dispositivo                                     
+OO-S-EFAM                   1.72                
+OO-ASC-SPS                  1.72                
+OO-PRR-SPS                  1.72                
+OO-S-PQM                    1.72                
+OO-S-EFAM                   1.72                
+OO-PRR-SPS                  1.72                
+OO-PRR-PS                   1.72                
+OO-PRR-OC                   1.72                
+OO-S-EFAM                   1.72                
+OO-S-EFAM                   1.72                
+OO-ASC-CD                   1.72                
+OO-ASC-SPS                  1.72                ,                 Porcentaje de datos Generados(%)
+Dispositivo                                     
+VM-CMS-PQM                  1.72                
+VM-AT-CD                    1.72                
+VM-CMS-PQM                  1.72                
+VM-CMS-OC                   1.72                
+VM-CMS-SPS                  3.45                
+VM-AT-VaT                   1.72                
+VM-CMS-RPS                  1.72                
+VM-CMS-RPS                  1.72                
+VM-AT-CD                    1.72                
+VM-AT-SL                    1.72                ,                 Porcentaje de datos Generados(%)
+Dispositivo                                     
+unknown                     17.24               )

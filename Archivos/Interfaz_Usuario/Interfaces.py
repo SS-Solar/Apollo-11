@@ -2,11 +2,10 @@ import logging
 import os
 from art import text2art
 from typing import List 
-import Archivos.Configuracion.Configuracion as Config
+#import Archivos.Configuracion.Configuracion as Config
+from Archivos.Configuracion.Configuracion import Configuracion
 
-# Configuración del logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
+Config = Configuracion()
 
 def apollo11() -> None:
     """Muestra el codigo ASCII del mensaje Apollo 11
@@ -47,7 +46,7 @@ def menu_inicial() -> None:
     """Genera el menú inicial que se ve desde consola."""
     bienvenido()
     apollo11()
-    Config.dispositivos()
+    #Config.dispositivos()
     Config.ciclo()
     nombre = input(" ¿DESEA CONTINUAR CON LOS ANTERIORES DATOS? [y/n]: ")
     if nombre.lower() == "n":
