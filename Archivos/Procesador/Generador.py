@@ -144,6 +144,15 @@ class Generador(Copia, Analisis):
             return str(0)
 
 
-    def nombre_archivo_log(ruta_logs, mision) -> str:
+    def nombre_archivo_log(ruta_logs: str, mision: str) -> str:
+        """Genera nombre de un archivo log y lo almacena en su respectiva carpeta
+
+        Args:
+            ruta_logs (str): url de la ruta
+            mision (str): mision la cual va a pertenecer el nombre
+
+        Returns:
+            str: _description_
+        """
         nombre_archivo_log: str = os.path.join(ruta_logs, f"APL-"+ mision +"-"+ Generador.cantidad_de_archivos_en_carpeta(ruta_logs) +".log")
         return nombre_archivo_log
