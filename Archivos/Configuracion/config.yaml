@@ -62,9 +62,6 @@ settings:
       - OO-PRR-PS
       - OO-PRR-OC
       nombreAbreviado: ORBONE
-    UNKW:
-      dispositivos:
-      - Unknown
     VacMars:
       dispositivos:
       - VM-AT-ST
@@ -85,3 +82,11 @@ settings:
       - VM-ASC-PQM
       - VM-ASC-CD
       nombreAbreviado: VMRS
+    UNKW:
+      dispositivos:
+      - Unknown
+      nombreAbreviado: UNKW
+    NUEVO:
+      dispositivos:
+      - Solo
+      nombreAbreviado: NN
