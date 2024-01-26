@@ -110,7 +110,7 @@ class Generador(Copia, Analisis):
             a_eventos: str = Generador.eventos()
             g_desconexiones: str= Generador.gestion_desconexiones()
             tabla, d_inoperables, per_inoperables = Generador.dispositivos_inoperables()
-            porcentajes: float = Generador.Porcentajes()
+            cm,gt,ob,vm,unk = Generador.Porcentajes()
             hash, date = Generador.generar_hash()
             nombre_reporte: str = os.path.join("Archivos","Reportes", f"APLSTATS-{date}.log") 
             with open(nombre_reporte, "a") as reporte:
@@ -118,7 +118,11 @@ class Generador(Copia, Analisis):
                             f"GESTION DE DESCONEXIONES:\nRepresenta los dispositivos con un mayor numero de desconexiones\n{g_desconexiones}"'\n''\n'
                             f"Una vez analizadas todas las misiones de Apollo-11 se determina que hay {d_inoperables} dispositivos inoperables,\nlo que corresponde al {per_inoperables}% de todos los dispositivos existentes"'\n''\n'
                             f"DISPOSITIVOS INOPERABLES:\n{tabla}"'\n''\n'
-                            f"TABLA DE PORCENTAJES:\nLa informacion resgitrada a continuacion contiene el registro de datos generados para cada dispositivo y misión con respecto a la cantidad total de datos.\n{porcentajes}")
+                            f"La informacion resgitrada a continuacion contiene el porcentaje datos generados para cada dispositivo y misión con respecto a la cantidad total de datos.\n\n"
+                            f"COLONYMOON:\n\n{cm}\n\n"
+                            f"GALAXYTWO:\n\n{gt}\n\n"
+                            f"ORBITONE:\n\n{ob}\n\n"
+                            f"UNKNOW:\n\n{unk}\n\n")
             print(f"Estadisticas registrados en {nombre_reporte}")
             logger.info("Estadisticas registradas en: ", nombre_reporte)
         except Exception as e:

@@ -1,7 +1,7 @@
 settings:
   cantidad_max_archivos: 100
   cantidad_min_archivos: 1
-  ciclo_simulacion: 5.0
+  ciclo_simulacion: 20.0
   estado_de_dispositivo:
   - Excelent
   - Good
@@ -45,6 +45,10 @@ settings:
       - GT-PRR-PS
       - GT-PRR-OC
       nombreAbreviado: GALXTWO
+    NUEVO:
+      dispositivos:
+      - Solo
+      nombreAbreviado: NN
     OrbitOne:
       dispositivos:
       - OO-ASC-PQM
@@ -62,6 +66,10 @@ settings:
       - OO-PRR-PS
       - OO-PRR-OC
       nombreAbreviado: ORBONE
+    UNKW:
+      dispositivos:
+      - Unknown
+      nombreAbreviado: UNKW
     VacMars:
       dispositivos:
       - VM-AT-ST
@@ -82,11 +90,3 @@ settings:
       - VM-ASC-PQM
       - VM-ASC-CD
       nombreAbreviado: VMRS
-    UNKW:
-      dispositivos:
-      - Unknown
-      nombreAbreviado: UNKW
-    NUEVO:
-      dispositivos:
-      - Solo
-      nombreAbreviado: NN

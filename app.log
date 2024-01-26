@@ -1,0 +1,530 @@
+2024-01-26 13:49:33,320 - INFO - Opción errónea, inténtelo otra vez.
+2024-01-26 13:50:48,081 - INFO - Opción errónea, inténtelo otra vez.
+2024-01-26 13:50:53,571 - INFO - Opción errónea, inténtelo otra vez.
+2024-01-26 15:12:53,294 - INFO - Recuerde utilizar el comando: python Apollo11.py --opcion valor_cambiado, para modificar valores desde consola.
+
+De lo contrario, continue con el siguiente Menu:
+2024-01-26 15:13:09,744 - INFO - Se ha modificado correctamente el ciclo de ejecucion
+2024-01-26 15:13:09,745 - INFO - Cantidad Maxima de archivos tomados correctamente
+2024-01-26 15:13:09,745 - INFO - Cantidad minima de archivos tomados correctamente
+2024-01-26 15:13:09,747 - INFO - Archivos de esta iteración: 83
+2024-01-26 15:13:09,798 - INFO - Se ha generado un hash
+2024-01-26 15:13:09,799 - INFO - Listado de misiones Creado
+2024-01-26 15:13:09,799 - INFO - Listado de misiones Creado
+2024-01-26 15:13:09,799 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:09,799 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:09,800 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:09,851 - INFO - Se ha generado un hash
+2024-01-26 15:13:09,851 - INFO - Listado de misiones Creado
+2024-01-26 15:13:09,851 - INFO - Listado de misiones Creado
+2024-01-26 15:13:09,851 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:09,851 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:09,852 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:09,903 - INFO - Se ha generado un hash
+2024-01-26 15:13:09,903 - INFO - Listado de misiones Creado
+2024-01-26 15:13:09,903 - INFO - Listado de misiones Creado
+2024-01-26 15:13:09,903 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:09,903 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:09,905 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:09,957 - INFO - Se ha generado un hash
+2024-01-26 15:13:09,958 - INFO - Listado de misiones Creado
+2024-01-26 15:13:09,958 - INFO - Listado de misiones Creado
+2024-01-26 15:13:09,958 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:09,959 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:09,964 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:10,015 - INFO - Se ha generado un hash
+2024-01-26 15:13:10,015 - INFO - Listado de misiones Creado
+2024-01-26 15:13:10,016 - INFO - Listado de misiones Creado
+2024-01-26 15:13:10,016 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:10,016 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:10,021 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:10,072 - INFO - Se ha generado un hash
+2024-01-26 15:13:10,072 - INFO - Listado de misiones Creado
+2024-01-26 15:13:10,072 - INFO - Listado de misiones Creado
+2024-01-26 15:13:10,072 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:10,072 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:10,075 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:10,127 - INFO - Se ha generado un hash
+2024-01-26 15:13:10,127 - INFO - Listado de misiones Creado
+2024-01-26 15:13:10,127 - INFO - Listado de misiones Creado
+2024-01-26 15:13:10,127 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:10,128 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:10,134 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:10,185 - INFO - Se ha generado un hash
+2024-01-26 15:13:10,185 - INFO - Listado de misiones Creado
+2024-01-26 15:13:10,186 - INFO - Listado de misiones Creado
+2024-01-26 15:13:10,186 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:10,186 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:10,191 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:10,242 - INFO - Se ha generado un hash
+2024-01-26 15:13:10,242 - INFO - Listado de misiones Creado
+2024-01-26 15:13:10,243 - INFO - Listado de misiones Creado
+2024-01-26 15:13:10,243 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:10,244 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:10,248 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:10,300 - INFO - Se ha generado un hash
+2024-01-26 15:13:10,301 - INFO - Listado de misiones Creado
+2024-01-26 15:13:10,301 - INFO - Listado de misiones Creado
+2024-01-26 15:13:10,302 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:10,302 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:10,308 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:10,360 - INFO - Se ha generado un hash
+2024-01-26 15:13:10,360 - INFO - Listado de misiones Creado
+2024-01-26 15:13:10,361 - INFO - Listado de misiones Creado
+2024-01-26 15:13:10,361 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:10,361 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:10,366 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:10,418 - INFO - Se ha generado un hash
+2024-01-26 15:13:10,419 - INFO - Listado de misiones Creado
+2024-01-26 15:13:10,419 - INFO - Listado de misiones Creado
+2024-01-26 15:13:10,419 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:10,420 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:10,424 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:10,475 - INFO - Se ha generado un hash
+2024-01-26 15:13:10,476 - INFO - Listado de misiones Creado
+2024-01-26 15:13:10,477 - INFO - Listado de misiones Creado
+2024-01-26 15:13:10,477 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:10,477 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:10,482 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:10,534 - INFO - Se ha generado un hash
+2024-01-26 15:13:10,535 - INFO - Listado de misiones Creado
+2024-01-26 15:13:10,535 - INFO - Listado de misiones Creado
+2024-01-26 15:13:10,535 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:10,536 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:10,542 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:10,593 - INFO - Se ha generado un hash
+2024-01-26 15:13:10,593 - INFO - Listado de misiones Creado
+2024-01-26 15:13:10,593 - INFO - Listado de misiones Creado
+2024-01-26 15:13:10,593 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:10,594 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:10,597 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:10,649 - INFO - Se ha generado un hash
+2024-01-26 15:13:10,649 - INFO - Listado de misiones Creado
+2024-01-26 15:13:10,649 - INFO - Listado de misiones Creado
+2024-01-26 15:13:10,649 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:10,649 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:10,652 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:10,704 - INFO - Se ha generado un hash
+2024-01-26 15:13:10,704 - INFO - Listado de misiones Creado
+2024-01-26 15:13:10,704 - INFO - Listado de misiones Creado
+2024-01-26 15:13:10,704 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:10,705 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:10,707 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:10,759 - INFO - Se ha generado un hash
+2024-01-26 15:13:10,759 - INFO - Listado de misiones Creado
+2024-01-26 15:13:10,760 - INFO - Listado de misiones Creado
+2024-01-26 15:13:10,760 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:10,762 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:10,767 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:10,818 - INFO - Se ha generado un hash
+2024-01-26 15:13:10,818 - INFO - Listado de misiones Creado
+2024-01-26 15:13:10,818 - INFO - Listado de misiones Creado
+2024-01-26 15:13:10,818 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:10,819 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:10,821 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:10,873 - INFO - Se ha generado un hash
+2024-01-26 15:13:10,873 - INFO - Listado de misiones Creado
+2024-01-26 15:13:10,873 - INFO - Listado de misiones Creado
+2024-01-26 15:13:10,873 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:10,873 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:10,876 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:10,927 - INFO - Se ha generado un hash
+2024-01-26 15:13:10,927 - INFO - Listado de misiones Creado
+2024-01-26 15:13:10,927 - INFO - Listado de misiones Creado
+2024-01-26 15:13:10,928 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:10,928 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:10,931 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:10,983 - INFO - Se ha generado un hash
+2024-01-26 15:13:10,983 - INFO - Listado de misiones Creado
+2024-01-26 15:13:10,983 - INFO - Listado de misiones Creado
+2024-01-26 15:13:10,983 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:10,984 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:10,987 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:11,038 - INFO - Se ha generado un hash
+2024-01-26 15:13:11,038 - INFO - Listado de misiones Creado
+2024-01-26 15:13:11,038 - INFO - Listado de misiones Creado
+2024-01-26 15:13:11,038 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:11,038 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:11,041 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:11,093 - INFO - Se ha generado un hash
+2024-01-26 15:13:11,093 - INFO - Listado de misiones Creado
+2024-01-26 15:13:11,093 - INFO - Listado de misiones Creado
+2024-01-26 15:13:11,093 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:11,094 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:11,097 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:11,148 - INFO - Se ha generado un hash
+2024-01-26 15:13:11,148 - INFO - Listado de misiones Creado
+2024-01-26 15:13:11,148 - INFO - Listado de misiones Creado
+2024-01-26 15:13:11,148 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:11,149 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:11,151 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:11,202 - INFO - Se ha generado un hash
+2024-01-26 15:13:11,202 - INFO - Listado de misiones Creado
+2024-01-26 15:13:11,202 - INFO - Listado de misiones Creado
+2024-01-26 15:13:11,202 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:11,202 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:11,204 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:11,255 - INFO - Se ha generado un hash
+2024-01-26 15:13:11,255 - INFO - Listado de misiones Creado
+2024-01-26 15:13:11,256 - INFO - Listado de misiones Creado
+2024-01-26 15:13:11,256 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:11,256 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:11,262 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:11,314 - INFO - Se ha generado un hash
+2024-01-26 15:13:11,315 - INFO - Listado de misiones Creado
+2024-01-26 15:13:11,315 - INFO - Listado de misiones Creado
+2024-01-26 15:13:11,315 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:11,316 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:11,321 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:11,372 - INFO - Se ha generado un hash
+2024-01-26 15:13:11,373 - INFO - Listado de misiones Creado
+2024-01-26 15:13:11,373 - INFO - Listado de misiones Creado
+2024-01-26 15:13:11,373 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:11,374 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:11,380 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:11,431 - INFO - Se ha generado un hash
+2024-01-26 15:13:11,431 - INFO - Listado de misiones Creado
+2024-01-26 15:13:11,432 - INFO - Listado de misiones Creado
+2024-01-26 15:13:11,432 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:11,432 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:11,438 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:11,489 - INFO - Se ha generado un hash
+2024-01-26 15:13:11,489 - INFO - Listado de misiones Creado
+2024-01-26 15:13:11,490 - INFO - Listado de misiones Creado
+2024-01-26 15:13:11,490 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:11,490 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:11,497 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:11,550 - INFO - Se ha generado un hash
+2024-01-26 15:13:11,551 - INFO - Listado de misiones Creado
+2024-01-26 15:13:11,551 - INFO - Listado de misiones Creado
+2024-01-26 15:13:11,551 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:11,552 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:11,557 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:11,608 - INFO - Se ha generado un hash
+2024-01-26 15:13:11,609 - INFO - Listado de misiones Creado
+2024-01-26 15:13:11,609 - INFO - Listado de misiones Creado
+2024-01-26 15:13:11,609 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:11,610 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:11,616 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:11,668 - INFO - Se ha generado un hash
+2024-01-26 15:13:11,668 - INFO - Listado de misiones Creado
+2024-01-26 15:13:11,669 - INFO - Listado de misiones Creado
+2024-01-26 15:13:11,669 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:11,669 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:11,677 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:11,729 - INFO - Se ha generado un hash
+2024-01-26 15:13:11,729 - INFO - Listado de misiones Creado
+2024-01-26 15:13:11,729 - INFO - Listado de misiones Creado
+2024-01-26 15:13:11,730 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:11,730 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:11,737 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:11,790 - INFO - Se ha generado un hash
+2024-01-26 15:13:11,790 - INFO - Listado de misiones Creado
+2024-01-26 15:13:11,790 - INFO - Listado de misiones Creado
+2024-01-26 15:13:11,790 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:11,790 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:11,792 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:11,843 - INFO - Se ha generado un hash
+2024-01-26 15:13:11,844 - INFO - Listado de misiones Creado
+2024-01-26 15:13:11,844 - INFO - Listado de misiones Creado
+2024-01-26 15:13:11,844 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:11,844 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:11,850 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:11,939 - INFO - Se ha generado un hash
+2024-01-26 15:13:11,939 - INFO - Listado de misiones Creado
+2024-01-26 15:13:11,940 - INFO - Listado de misiones Creado
+2024-01-26 15:13:11,940 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:11,940 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:11,943 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:11,993 - INFO - Se ha generado un hash
+2024-01-26 15:13:11,993 - INFO - Listado de misiones Creado
+2024-01-26 15:13:11,993 - INFO - Listado de misiones Creado
+2024-01-26 15:13:11,993 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:11,993 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:11,994 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:12,046 - INFO - Se ha generado un hash
+2024-01-26 15:13:12,046 - INFO - Listado de misiones Creado
+2024-01-26 15:13:12,046 - INFO - Listado de misiones Creado
+2024-01-26 15:13:12,046 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:12,046 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:12,047 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:12,098 - INFO - Se ha generado un hash
+2024-01-26 15:13:12,098 - INFO - Listado de misiones Creado
+2024-01-26 15:13:12,098 - INFO - Listado de misiones Creado
+2024-01-26 15:13:12,098 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:12,099 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:12,103 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:12,155 - INFO - Se ha generado un hash
+2024-01-26 15:13:12,155 - INFO - Listado de misiones Creado
+2024-01-26 15:13:12,155 - INFO - Listado de misiones Creado
+2024-01-26 15:13:12,156 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:12,156 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:12,162 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:12,213 - INFO - Se ha generado un hash
+2024-01-26 15:13:12,213 - INFO - Listado de misiones Creado
+2024-01-26 15:13:12,213 - INFO - Listado de misiones Creado
+2024-01-26 15:13:12,214 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:12,214 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:12,219 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:12,270 - INFO - Se ha generado un hash
+2024-01-26 15:13:12,270 - INFO - Listado de misiones Creado
+2024-01-26 15:13:12,272 - INFO - Listado de misiones Creado
+2024-01-26 15:13:12,272 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:12,272 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:12,276 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:12,328 - INFO - Se ha generado un hash
+2024-01-26 15:13:12,328 - INFO - Listado de misiones Creado
+2024-01-26 15:13:12,329 - INFO - Listado de misiones Creado
+2024-01-26 15:13:12,329 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:12,329 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:12,334 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:12,386 - INFO - Se ha generado un hash
+2024-01-26 15:13:12,387 - INFO - Listado de misiones Creado
+2024-01-26 15:13:12,387 - INFO - Listado de misiones Creado
+2024-01-26 15:13:12,387 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:12,387 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:12,392 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:12,443 - INFO - Se ha generado un hash
+2024-01-26 15:13:12,443 - INFO - Listado de misiones Creado
+2024-01-26 15:13:12,443 - INFO - Listado de misiones Creado
+2024-01-26 15:13:12,444 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:12,444 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:12,449 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:12,501 - INFO - Se ha generado un hash
+2024-01-26 15:13:12,501 - INFO - Listado de misiones Creado
+2024-01-26 15:13:12,501 - INFO - Listado de misiones Creado
+2024-01-26 15:13:12,501 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:12,501 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:12,507 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:12,559 - INFO - Se ha generado un hash
+2024-01-26 15:13:12,559 - INFO - Listado de misiones Creado
+2024-01-26 15:13:12,559 - INFO - Listado de misiones Creado
+2024-01-26 15:13:12,560 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:12,560 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:12,565 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:12,617 - INFO - Se ha generado un hash
+2024-01-26 15:13:12,618 - INFO - Listado de misiones Creado
+2024-01-26 15:13:12,618 - INFO - Listado de misiones Creado
+2024-01-26 15:13:12,618 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:12,618 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:12,624 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:12,674 - INFO - Se ha generado un hash
+2024-01-26 15:13:12,674 - INFO - Listado de misiones Creado
+2024-01-26 15:13:12,674 - INFO - Listado de misiones Creado
+2024-01-26 15:13:12,675 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:12,675 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:12,680 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:12,732 - INFO - Se ha generado un hash
+2024-01-26 15:13:12,733 - INFO - Listado de misiones Creado
+2024-01-26 15:13:12,733 - INFO - Listado de misiones Creado
+2024-01-26 15:13:12,733 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:12,733 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:12,738 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:12,789 - INFO - Se ha generado un hash
+2024-01-26 15:13:12,789 - INFO - Listado de misiones Creado
+2024-01-26 15:13:12,789 - INFO - Listado de misiones Creado
+2024-01-26 15:13:12,790 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:12,790 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:12,795 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:12,848 - INFO - Se ha generado un hash
+2024-01-26 15:13:12,848 - INFO - Listado de misiones Creado
+2024-01-26 15:13:12,848 - INFO - Listado de misiones Creado
+2024-01-26 15:13:12,849 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:12,849 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:12,856 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:12,907 - INFO - Se ha generado un hash
+2024-01-26 15:13:12,907 - INFO - Listado de misiones Creado
+2024-01-26 15:13:12,907 - INFO - Listado de misiones Creado
+2024-01-26 15:13:12,907 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:12,907 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:12,910 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:12,981 - INFO - Se ha generado un hash
+2024-01-26 15:13:12,981 - INFO - Listado de misiones Creado
+2024-01-26 15:13:12,981 - INFO - Listado de misiones Creado
+2024-01-26 15:13:12,982 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:12,982 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:12,986 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:13,036 - INFO - Se ha generado un hash
+2024-01-26 15:13:13,036 - INFO - Listado de misiones Creado
+2024-01-26 15:13:13,036 - INFO - Listado de misiones Creado
+2024-01-26 15:13:13,036 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:13,036 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:13,037 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:13,089 - INFO - Se ha generado un hash
+2024-01-26 15:13:13,089 - INFO - Listado de misiones Creado
+2024-01-26 15:13:13,089 - INFO - Listado de misiones Creado
+2024-01-26 15:13:13,090 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:13,090 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:13,092 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:13,143 - INFO - Se ha generado un hash
+2024-01-26 15:13:13,143 - INFO - Listado de misiones Creado
+2024-01-26 15:13:13,143 - INFO - Listado de misiones Creado
+2024-01-26 15:13:13,143 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:13,143 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:13,146 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:13,198 - INFO - Se ha generado un hash
+2024-01-26 15:13:13,198 - INFO - Listado de misiones Creado
+2024-01-26 15:13:13,198 - INFO - Listado de misiones Creado
+2024-01-26 15:13:13,198 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:13,198 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:13,201 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:13,252 - INFO - Se ha generado un hash
+2024-01-26 15:13:13,252 - INFO - Listado de misiones Creado
+2024-01-26 15:13:13,252 - INFO - Listado de misiones Creado
+2024-01-26 15:13:13,252 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:13,252 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:13,255 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:13,307 - INFO - Se ha generado un hash
+2024-01-26 15:13:13,307 - INFO - Listado de misiones Creado
+2024-01-26 15:13:13,307 - INFO - Listado de misiones Creado
+2024-01-26 15:13:13,307 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:13,307 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:13,308 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:13,359 - INFO - Se ha generado un hash
+2024-01-26 15:13:13,359 - INFO - Listado de misiones Creado
+2024-01-26 15:13:13,359 - INFO - Listado de misiones Creado
+2024-01-26 15:13:13,359 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:13,359 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:13,360 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:13,411 - INFO - Se ha generado un hash
+2024-01-26 15:13:13,411 - INFO - Listado de misiones Creado
+2024-01-26 15:13:13,411 - INFO - Listado de misiones Creado
+2024-01-26 15:13:13,412 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:13,412 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:13,416 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:13,468 - INFO - Se ha generado un hash
+2024-01-26 15:13:13,468 - INFO - Listado de misiones Creado
+2024-01-26 15:13:13,468 - INFO - Listado de misiones Creado
+2024-01-26 15:13:13,468 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:13,469 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:13,473 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:13,524 - INFO - Se ha generado un hash
+2024-01-26 15:13:13,524 - INFO - Listado de misiones Creado
+2024-01-26 15:13:13,524 - INFO - Listado de misiones Creado
+2024-01-26 15:13:13,524 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:13,525 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:13,530 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:13,581 - INFO - Se ha generado un hash
+2024-01-26 15:13:13,581 - INFO - Listado de misiones Creado
+2024-01-26 15:13:13,581 - INFO - Listado de misiones Creado
+2024-01-26 15:13:13,581 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:13,582 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:13,586 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:13,637 - INFO - Se ha generado un hash
+2024-01-26 15:13:13,637 - INFO - Listado de misiones Creado
+2024-01-26 15:13:13,637 - INFO - Listado de misiones Creado
+2024-01-26 15:13:13,637 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:13,638 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:13,642 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:13,693 - INFO - Se ha generado un hash
+2024-01-26 15:13:13,693 - INFO - Listado de misiones Creado
+2024-01-26 15:13:13,693 - INFO - Listado de misiones Creado
+2024-01-26 15:13:13,693 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:13,694 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:13,698 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:13,749 - INFO - Se ha generado un hash
+2024-01-26 15:13:13,749 - INFO - Listado de misiones Creado
+2024-01-26 15:13:13,749 - INFO - Listado de misiones Creado
+2024-01-26 15:13:13,749 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:13,750 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:13,754 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:13,805 - INFO - Se ha generado un hash
+2024-01-26 15:13:13,805 - INFO - Listado de misiones Creado
+2024-01-26 15:13:13,805 - INFO - Listado de misiones Creado
+2024-01-26 15:13:13,805 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:13,806 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:13,811 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:13,862 - INFO - Se ha generado un hash
+2024-01-26 15:13:13,862 - INFO - Listado de misiones Creado
+2024-01-26 15:13:13,863 - INFO - Listado de misiones Creado
+2024-01-26 15:13:13,863 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:13,863 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:13,870 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:13,921 - INFO - Se ha generado un hash
+2024-01-26 15:13:13,921 - INFO - Listado de misiones Creado
+2024-01-26 15:13:13,922 - INFO - Listado de misiones Creado
+2024-01-26 15:13:13,922 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:13,922 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:13,929 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:13,981 - INFO - Se ha generado un hash
+2024-01-26 15:13:13,982 - INFO - Listado de misiones Creado
+2024-01-26 15:13:13,982 - INFO - Listado de misiones Creado
+2024-01-26 15:13:13,982 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:13,983 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:13,990 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:14,041 - INFO - Se ha generado un hash
+2024-01-26 15:13:14,041 - INFO - Listado de misiones Creado
+2024-01-26 15:13:14,042 - INFO - Listado de misiones Creado
+2024-01-26 15:13:14,042 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:14,042 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:14,050 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:14,102 - INFO - Se ha generado un hash
+2024-01-26 15:13:14,102 - INFO - Listado de misiones Creado
+2024-01-26 15:13:14,103 - INFO - Listado de misiones Creado
+2024-01-26 15:13:14,103 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:14,103 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:14,107 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:14,158 - INFO - Se ha generado un hash
+2024-01-26 15:13:14,158 - INFO - Listado de misiones Creado
+2024-01-26 15:13:14,158 - INFO - Listado de misiones Creado
+2024-01-26 15:13:14,158 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:14,159 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:14,165 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:14,218 - INFO - Se ha generado un hash
+2024-01-26 15:13:14,218 - INFO - Listado de misiones Creado
+2024-01-26 15:13:14,218 - INFO - Listado de misiones Creado
+2024-01-26 15:13:14,218 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:14,218 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:14,222 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:14,273 - INFO - Se ha generado un hash
+2024-01-26 15:13:14,273 - INFO - Listado de misiones Creado
+2024-01-26 15:13:14,273 - INFO - Listado de misiones Creado
+2024-01-26 15:13:14,273 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:14,273 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:14,278 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:14,329 - INFO - Se ha generado un hash
+2024-01-26 15:13:14,329 - INFO - Listado de misiones Creado
+2024-01-26 15:13:14,329 - INFO - Listado de misiones Creado
+2024-01-26 15:13:14,329 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:14,329 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:14,333 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:14,384 - INFO - Se ha generado un hash
+2024-01-26 15:13:14,384 - INFO - Listado de misiones Creado
+2024-01-26 15:13:14,384 - INFO - Listado de misiones Creado
+2024-01-26 15:13:14,384 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:14,384 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:14,388 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:14,440 - INFO - Se ha generado un hash
+2024-01-26 15:13:14,440 - INFO - Listado de misiones Creado
+2024-01-26 15:13:14,440 - INFO - Listado de misiones Creado
+2024-01-26 15:13:14,441 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:14,441 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:14,444 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:14,496 - INFO - Se ha generado un hash
+2024-01-26 15:13:14,496 - INFO - Listado de misiones Creado
+2024-01-26 15:13:14,496 - INFO - Listado de misiones Creado
+2024-01-26 15:13:14,496 - INFO - Lista de dispositivos desplegada
+2024-01-26 15:13:14,496 - INFO - Listado de estados generado correctamente
+2024-01-26 15:13:14,500 - INFO - Se ha generado archivos correctamente
+2024-01-26 15:13:14,553 - INFO - Iteracion 1Completada.
+2024-01-26 15:13:15,566 - INFO - Se han analizado correctamente los registros
+2024-01-26 15:13:15,574 - INFO - DataFrame creado correctamente
+2024-01-26 15:13:15,592 - INFO - Se ha generado correctamente la tabla de eventos
+2024-01-26 15:13:15,603 - INFO - Se han analizado correctamente los registros
+2024-01-26 15:13:15,605 - INFO - DataFrame creado correctamente
+2024-01-26 15:13:15,607 - INFO - Gestion de desconexiones generado correctamente
+2024-01-26 15:13:15,619 - INFO - Se han analizado correctamente los registros
+2024-01-26 15:13:15,620 - INFO - DataFrame creado correctamente
+2024-01-26 15:13:15,622 - INFO - Se ha generado correctamente el reporte de dispositivos inoperables
+2024-01-26 15:13:15,633 - INFO - Se han analizado correctamente los registros
+2024-01-26 15:13:15,635 - INFO - DataFrame creado correctamente
+2024-01-26 15:13:15,641 - INFO - Se ha generado correctamente los porcentajes de los datos
+2024-01-26 15:13:15,641 - INFO - Se ha generado un hash
+2024-01-26 15:13:15,688 - INFO - Se ha mostrado el reporte correctamente en consola
+2024-01-26 15:13:15,781 - INFO - La carpeta 'c:\Users\Usuario\Documents\GitHub\Apollo-11\Archivos\Logs' se encuentra en: c:\Users\Usuario\Documents\GitHub\Apollo-11\Archivos\Reportes\Copias\Logs26012024151315
+2024-01-26 15:13:15,782 - INFO - Listado de misiones Creado
+2024-01-26 15:13:15,798 - INFO - Archivos copiados y limpiados correctamente
+2024-01-26 15:13:15,799 - INFO - Programa terminado. Saliendo...
+2024-01-26 15:13:44,404 - INFO - Recuerde utilizar el comando: python Apollo11.py --opcion valor_cambiado, para modificar valores desde consola.
+
+De lo contrario, continue con el siguiente Menu:
