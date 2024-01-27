@@ -51,24 +51,28 @@ class Interfaces:
 
     @staticmethod
     def menu_alternativo()-> None:
-        opcion = input("Qué información desea cambiar?\n 1. Ciclo de tiempo (s)\n 2. Eliminar Dispositivos\n 3. Añadir un nuevo dispositivo\n 4. Cambiar cantidad mínima de archivos a generar\n 5. Cambiar cantidad máxima de archivos a generar\n 6. Crear copia del último reporte disponible\n 9. Seguir a la generación de archivos\n")
         # Las siguientes operaciones se realizan en el módulo de configuración, se asume que están correctamente ajustadas con logging.
-        if opcion == "1":
-            ciclo = input("Ingrese nuevo ciclo de tiempo: ")
-            Config.cambiar_ciclo(float(ciclo))
-        elif opcion == "2":
-            Config.menu_eliminar_dispositivo()
-        elif opcion == "3":
-            Config.menu_nuevo_dispositivo()
-        elif opcion == "4":
-            Config.menu_cambiar_min_archivos()
-        elif opcion == "5":
-            Config.menu_cambiar_max_archivos()
-        elif opcion == "6":
-            Config.Crear_copia()
-        elif opcion != "9":
-            print("Opción errónea, inténtelo otra vez.")
-            logging.info("Opción errónea, inténtelo otra vez.")
+        opcion =0
+        while ( not (opcion == 7)):
+            opcion = input ("Que informacióm desea cambiar?\n 1. Ciclo de  tiempo (s)\n 2. Eliminar Dispositivos \n 3. Añadir un nuevo dispositivo \n 4. Cambiar cantidad minima de archivos a generar \n 5. Cambiar cantidad maxima de archivos a generar \n 6. Crear copia del ultimo reporte disponible \n 7. Seguir a la generacion de archivos \n" )
+            if opcion == "1":
+                ciclo = input("Ingrese nuevo ciclo de tiempo: ")
+                Config.cambiar_ciclo(float(ciclo))
+            elif opcion == "2":
+                Config.menu_eliminar_dispositivo()
+            elif opcion == "3":
+                Config.menu_nuevo_dispositivo()
+            elif opcion == "4":
+                Config.menu_cambiar_min_archivos()
+            elif opcion == "5":
+                Config.menu_cambiar_max_archivos()
+            elif opcion == "6":
+                Config.Crear_copia()
+            elif opcion == "7":
+                break
+            else:
+                print("Opción errónea, inténtelo otra vez.")
+                logging.info("Opción errónea, inténtelo otra vez.")
 
 
     @staticmethod
