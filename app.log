@@ -1,13 +1,13 @@
-2024-01-26 13:49:33,320 - INFO - Opción errónea, inténtelo otra vez.
-2024-01-26 13:50:48,081 - INFO - Opción errónea, inténtelo otra vez.
-2024-01-26 13:50:53,571 - INFO - Opción errónea, inténtelo otra vez.
+2024-01-26 13:49:33,320 - INFO - Opciï¿½n errï¿½nea, intï¿½ntelo otra vez.
+2024-01-26 13:50:48,081 - INFO - Opciï¿½n errï¿½nea, intï¿½ntelo otra vez.
+2024-01-26 13:50:53,571 - INFO - Opciï¿½n errï¿½nea, intï¿½ntelo otra vez.
 2024-01-26 15:12:53,294 - INFO - Recuerde utilizar el comando: python Apollo11.py --opcion valor_cambiado, para modificar valores desde consola.
 
 De lo contrario, continue con el siguiente Menu:
 2024-01-26 15:13:09,744 - INFO - Se ha modificado correctamente el ciclo de ejecucion
 2024-01-26 15:13:09,745 - INFO - Cantidad Maxima de archivos tomados correctamente
 2024-01-26 15:13:09,745 - INFO - Cantidad minima de archivos tomados correctamente
-2024-01-26 15:13:09,747 - INFO - Archivos de esta iteración: 83
+2024-01-26 15:13:09,747 - INFO - Archivos de esta iteraciï¿½n: 83
 2024-01-26 15:13:09,798 - INFO - Se ha generado un hash
 2024-01-26 15:13:09,799 - INFO - Listado de misiones Creado
 2024-01-26 15:13:09,799 - INFO - Listado de misiones Creado
@@ -533,7 +533,7 @@ De lo contrario, continue con el siguiente Menu:
 De lo contrario, continue con el siguiente Menu:
 2024-01-27 12:52:53,504 - INFO - Cantidad Maxima de archivos tomados correctamente
 2024-01-27 12:52:53,504 - INFO - Cantidad minima de archivos tomados correctamente
-2024-01-27 12:52:53,504 - INFO - Archivos de esta iteración: 38
+2024-01-27 12:52:53,504 - INFO - Archivos de esta iteraciï¿½n: 38
 2024-01-27 12:52:53,605 - INFO - Se ha generado un hash
 2024-01-27 12:52:53,605 - INFO - Listado de misiones Creado
 2024-01-27 12:52:53,605 - INFO - Listado de misiones Creado
@@ -784,10 +784,10 @@ De lo contrario, continue con el siguiente Menu:
 2024-01-27 12:56:54,202 - INFO - Recuerde utilizar el comando: python Apollo11.py --opcion valor_cambiado, para modificar valores desde consola.
 
 De lo contrario, continue con el siguiente Menu:
-2024-01-27 12:56:56,974 - INFO - Opción errónea, inténtelo otra vez.
+2024-01-27 12:56:56,974 - INFO - Opciï¿½n errï¿½nea, intï¿½ntelo otra vez.
 2024-01-27 12:56:56,975 - INFO - Cantidad Maxima de archivos tomados correctamente
 2024-01-27 12:56:56,975 - INFO - Cantidad minima de archivos tomados correctamente
-2024-01-27 12:56:56,977 - INFO - Archivos de esta iteración: 54
+2024-01-27 12:56:56,977 - INFO - Archivos de esta iteraciï¿½n: 54
 2024-01-27 12:56:56,994 - INFO - Se ha generado un hash
 2024-01-27 12:56:56,994 - INFO - Listado de misiones Creado
 2024-01-27 12:56:56,994 - INFO - Listado de misiones Creado
@@ -1134,10 +1134,10 @@ De lo contrario, continue con el siguiente Menu:
 2024-01-27 13:01:32,250 - INFO - Recuerde utilizar el comando: python Apollo11.py --opcion valor_cambiado, para modificar valores desde consola.
 
 De lo contrario, continue con el siguiente Menu:
-2024-01-27 13:01:36,385 - INFO - Opción errónea, inténtelo otra vez.
+2024-01-27 13:01:36,385 - INFO - Opciï¿½n errï¿½nea, intï¿½ntelo otra vez.
 2024-01-27 13:01:42,112 - INFO - Cantidad Maxima de archivos tomados correctamente
 2024-01-27 13:01:42,112 - INFO - Cantidad minima de archivos tomados correctamente
-2024-01-27 13:01:42,114 - INFO - Archivos de esta iteración: 88
+2024-01-27 13:01:42,114 - INFO - Archivos de esta iteraciï¿½n: 88
 2024-01-27 13:01:42,143 - INFO - Se ha generado un hash
 2024-01-27 13:01:42,143 - INFO - Listado de misiones Creado
 2024-01-27 13:01:42,145 - INFO - Listado de misiones Creado

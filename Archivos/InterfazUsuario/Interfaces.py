@@ -96,5 +96,5 @@ class Interfaces:
             parser.print_help()
             print("Recuerde utilizar el comando: python Apollo11.py --opcion valor_cambiado, para modificar valores desde consola.\n\nDe lo contrario, continue con el siguiente Menu:")
             logging.info("Recuerde utilizar el comando: python Apollo11.py --opcion valor_cambiado, para modificar valores desde consola.\n\nDe lo contrario, continue con el siguiente Menu:")
-            Interfaces.menu_alternativo()
+            # Interfaces.menu_alternativo()
                     
