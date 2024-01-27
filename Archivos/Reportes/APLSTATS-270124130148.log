@@ -1,0 +1,138 @@
+ANALISIS DE EVENTOS:
+La informacion registrada a continuacion, muestra la cantidad de eventos por estado para cada dispositivo y mision
+                       Cantidad_Eventos                                           
+Estado                         Excelent Faulty Good Unknown Warning killed unknown
+Mision     Dispositivo                                                            
+ColonyMoon CM-ASC-PQM                 0      1    1       1       1      0       0
+           CM-PRR-CD                  0      0    1       0       0      0       0
+           CM-PRR-PQM                 0      1    0       1       1      0       0
+           CM-PRR-PS                  0      1    0       0       0      0       0
+           CM-S-CD                    0      0    0       1       0      0       0
+           CM-S-EFAC                  0      0    1       0       1      0       0
+           CM-S-SPS                   0      0    0       0       1      0       0
+GalaxyTwo  GT-ASC-CD                  0      0    0       0       0      2       0
+           GT-ASC-PQM                 0      1    0       0       0      0       0
+           GT-ASC-SPS                 0      0    0       1       1      0       0
+           GT-PRR-OC                  0      1    0       0       0      0       0
+           GT-PRR-PQM                 1      0    0       1       0      1       0
+           GT-PRR-PS                  0      0    0       1       0      0       0
+           GT-S-CD                    0      0    0       0       0      1       0
+           GT-S-EFAC                  0      0    0       1       0      0       0
+           GT-S-PQM                   0      1    0       0       0      0       0
+           GT-S-SPS                   0      0    2       0       0      0       0
+NUEVO      Solo                       2      3    2       3       3      2       0
+OrbitOne   OO-ASC-CD                  0      0    1       0       0      0       0
+           OO-ASC-SPS                 0      0    0       0       0      1       0
+           OO-PRR-CD                  0      2    0       0       0      0       0
+           OO-PRR-OC                  2      0    0       0       0      0       0
+           OO-PRR-PS                  0      0    0       1       0      1       0
+           OO-PRR-SPS                 1      0    0       0       0      0       0
+           OO-PRR-TS                  0      1    0       0       0      0       0
+           OO-S-CD                    1      0    0       0       0      1       0
+           OO-S-EFAC                  0      0    1       0       0      0       0
+           OO-S-EFAM                  0      0    0       0       1      0       0
+           OO-S-SPS                   2      1    0       0       0      0       0
+UNKW       unknown                    0      0    0       0       0      0      15
+VacMars    VM-ASC-CD                  0      0    1       0       0      0       0
+           VM-ASC-PQM                 1      0    0       1       0      0       0
+           VM-AT-SL                   0      0    0       1       0      0       0
+           VM-AT-ST                   0      0    2       0       0      0       0
+           VM-AT-VaT                  0      0    0       1       0      0       0
+           VM-CMS-OC                  0      0    0       1       1      0       0
+           VM-CMS-SPS                 1      0    0       0       0      0       0
+           VM-CMS-TS                  0      0    1       1       0      0       0
+           VM-CMS-WTP                 0      0    0       0       0      1       0
+
+GESTION DE DESCONEXIONES:
+Representa los dispositivos con un mayor numero de desconexiones
+                       Cantidad_Eventos
+Mision     Dispositivo                 
+ColonyMoon CM-ASC-PQM                 1
+           CM-PRR-PQM                 1
+           CM-S-CD                    1
+GalaxyTwo  GT-ASC-SPS                 1
+           GT-PRR-PQM                 1
+           GT-PRR-PS                  1
+           GT-S-EFAC                  1
+NUEVO      Solo                       3
+OrbitOne   OO-PRR-PS                  1
+VacMars    VM-ASC-PQM                 1
+
+Una vez analizadas todas las misiones de Apollo-11 se determina que hay 8 dispositivos inoperables,
+lo que corresponde al 13.56% de todos los dispositivos existentes
+
+DISPOSITIVOS INOPERABLES:
+                      Cantidad_Eventos
+Mision    Dispositivo                 
+GalaxyTwo GT-ASC-CD                  2
+          GT-PRR-PQM                 1
+          GT-S-CD                    1
+NUEVO     Solo                       2
+OrbitOne  OO-ASC-SPS                 1
+          OO-PRR-PS                  1
+          OO-S-CD                    1
+VacMars   VM-CMS-WTP                 1
+
+La informacion resgitrada a continuacion contiene el porcentaje datos generados para cada dispositivo y misión con respecto a la cantidad total de datos.
+
+COLONYMOON:
+
+                Porcentaje de datos Generados(%)
+Dispositivo                                     
+CM-ASC-PQM                  1.14                
+CM-S-CD                     1.14                
+CM-PRR-PQM                  1.14                
+CM-S-EFAC                   1.14                
+CM-ASC-PQM                  1.14                
+CM-ASC-PQM                  1.14                
+CM-ASC-PQM                  1.14                
+CM-PRR-PS                   1.14                
+CM-S-EFAC                   1.14                
+CM-PRR-PQM                  1.14                
+CM-PRR-CD                   1.14                
+CM-S-SPS                    1.14                
+CM-PRR-PQM                  1.14                
+
+GALAXYTWO:
+
+                Porcentaje de datos Generados(%)
+Dispositivo                                     
+GT-S-CD                     1.14                
+GT-PRR-OC                   1.14                
+GT-PRR-PQM                  1.14                
+GT-ASC-SPS                  1.14                
+GT-PRR-PQM                  1.14                
+GT-PRR-PQM                  1.14                
+GT-PRR-PS                   1.14                
+GT-ASC-PQM                  1.14                
+GT-ASC-SPS                  1.14                
+GT-ASC-CD                   2.27                
+GT-S-SPS                    2.27                
+GT-S-EFAC                   1.14                
+GT-S-PQM                    1.14                
+
+ORBITONE:
+
+                Porcentaje de datos Generados(%)
+Dispositivo                                     
+OO-PRR-CD                   2.27                
+OO-S-EFAM                   1.14                
+OO-S-SPS                    2.27                
+OO-S-SPS                    1.14                
+OO-ASC-SPS                  1.14                
+OO-PRR-SPS                  1.14                
+OO-S-CD                     1.14                
+OO-PRR-TS                   1.14                
+OO-PRR-OC                   2.27                
+OO-ASC-CD                   1.14                
+OO-S-CD                     1.14                
+OO-PRR-PS                   1.14                
+OO-PRR-PS                   1.14                
+OO-S-EFAC                   1.14                
+
+UNKNOW:
+
+                Porcentaje de datos Generados(%)
+Dispositivo                                     
+unknown                     17.05               
+
