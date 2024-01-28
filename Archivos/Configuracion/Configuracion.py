@@ -38,7 +38,7 @@ class Configuracion():
             return misiones_ar
         except Exception as e:
             logger.error(f"Se ha producido un error en la generacion de misiones: {e}")
-            misiones_ar = ["Unknown"]
+            return ["Unknown"]
 
 
     @staticmethod
@@ -49,7 +49,7 @@ class Configuracion():
         """
 
         try:
-            misiones_abreviados = List[str]
+            misiones_abreviados = []
             for mision, detalles in data["settings"]["misiones"].items():
                 misiones_abreviados.append(detalles["nombreAbreviado"])
             logger.info("Listado de misiones abreviadas generado")
