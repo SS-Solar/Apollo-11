@@ -145,7 +145,12 @@ class Configuracion():
 
 
     @staticmethod
-    def nuevo_dispositivo(mision: str, nuevo_dispositivo: str) -> None:
+    def nuevo_dispositivo(mision: int, nuevo_dispositivo: str) -> None:
+        """Crea un dispositivo
+        Args:
+            mision (int): Numero de mision dependiendo la posicion
+            nuevo_dispositivo (str): cadena de texto del dispositivo a eliminar
+        """
         try:
             data["settings"]["misiones"][mision]["dispositivos"].append(nuevo_dispositivo)
             logger.info(f"Dispositivo añadido correctamente a la misión {mision}")
@@ -164,11 +169,11 @@ class Configuracion():
             dispositivo_a_eliminar (str): cadena de texto del dispositivo a eliminar
         """
         try:
-            dispo = data["settings"]["misiones"][mision]["dispositivos"].pop(dispositivo_a_eliminar)
+            data["settings"]["misiones"][mision]["dispositivos"].pop(dispositivo_a_eliminar)
             with open(ruta, "w") as archivo:
                 yaml.dump(data, archivo, default_flow_style=False)
                 print(" Datos modificados y almacenados correctamente")
-            logger.info("Se ha eliminado el dispositivo " + dispo)
+            logger.info(f"Se ha eliminado el dispositivo {dispositivo_a_eliminar} correctamente a la mision {mision}")
         except Exception as e:
             print(f"el dispositivo seleccionado no existe para la misión {mision}")
             logger.error(f"Se ha producido un error al eliminar un nuevo dispositivo: {e}")

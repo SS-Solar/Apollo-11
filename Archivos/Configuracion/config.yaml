@@ -1,6 +1,6 @@
 settings:
-  cantidad_max_archivos: 100
-  cantidad_min_archivos: 1
+  cantidad_max_archivos: 200
+  cantidad_min_archivos: 5
   ciclo_simulacion: 20.0
   estado_de_dispositivo:
   - Excelent

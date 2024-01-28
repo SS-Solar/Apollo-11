@@ -13,21 +13,18 @@ class Interfaces:
 
 
     @staticmethod
-    def apollo11() -> None:
-        """Muestra el codigo ASCII del mensaje Apollo 11
-        """
-        mensaje: str = "APOLLO-11"
-        arte: any = text2art(mensaje, font="")
-        print(arte)
-
+    def bienvenido() -> None:
+        print("Dentro de Interfaces.bienvenido()")  # Para depuración
+    mensaje: str = "Bienvenido A"
+    arte: any = text2art(mensaje, font="")
+    print(arte)
 
     @staticmethod
-    def bienvenido() -> None:
-        """Muestra el codigo ASCII del mensaje Bienvenidos
-        """
-        mensaje: str = "Bienvenido A"
-        arte: any = text2art(mensaje, font="")
-        print(arte)
+    def apollo11() -> None:
+        print("Dentro de Interfaces.apollo11()")  # Para depuración
+    mensaje: str = "APOLLO-11"
+    arte: any = text2art(mensaje, font="")
+    print(arte)
 
 
     @staticmethod
@@ -50,40 +47,42 @@ class Interfaces:
             logging.error("Error al mostrar el reporte", exc_info=True)
 
     @staticmethod
-    def menu_inicial()-> None:
-        Interfaces.bienvenido()
-        Interfaces.apollo11()
-        #Config.dispositivos()
+    def menu_inicial() -> None:
         Config.ciclo()
-        # Las siguientes operaciones se realizan en el módulo de configuración, se asume que están correctamente ajustadas con logging.
         nombre = input(" ¿DESEA CONTINUAR CON LOS ANTERIORES DATOS? [y/n]: ")
         if nombre.lower() == "n":
-            opcion =0
-            while ( not (opcion == 7)):
-                opcion = input ("Que informacióm desea cambiar?\n 1. Ciclo de  tiempo (s)\n 2. Eliminar Dispositivos \n 3. Añadir un nuevo dispositivo \n 4. Cambiar cantidad minima de archivos a generar \n 5. Cambiar cantidad maxima de archivos a generar \n 6. Crear copia del ultimo reporte disponible \n 7. Seguir a la generacion de archivos \n" )
-                if opcion == "1":
-                    ciclo = input("Ingrese nuevo ciclo de tiempo: ")
+            opcion = ""  # Inicializa opción como cadena vacía
+        while opcion != "7":
+            opcion = input("Que información desea cambiar?\n 1. Ciclo de tiempo (s)\n 2. Eliminar Dispositivos \n 3. Añadir un nuevo dispositivo \n 4. Cambiar cantidad mínima de archivos a generar \n 5. Cambiar cantidad máxima de archivos a generar \n 6. Crear copia del último reporte disponible \n 7. Seguir a la generación de archivos \n")
+            if opcion == "1":
+                ciclo = input("Ingrese nuevo ciclo de tiempo: ")
+                try:
                     Config.cambiar_ciclo(float(ciclo))
-                    break
-                elif opcion == "2":
-                    Config.menu_eliminar_dispositivo()
-                    break
-                elif opcion == "3":
-                    Config.menu_nuevo_dispositivo()
-                    break
-                elif opcion == "4":
-                    Config.menu_cambiar_min_archivos()
-                    break
-                elif opcion == "5":
-                    Config.menu_cambiar_max_archivos()
-                    break
-                elif opcion == "6":
-                    Config.Crear_copia()
-                    break
-                elif opcion == "7":
-                    break
-                else:
-                    print("Opción errónea, inténtelo otra vez.")
-                    logging.info("Opción errónea, inténtelo otra vez.")
-
-                    
+                    logging.info(f"Ciclo cambiado a {ciclo}")
+                except ValueError:
+                    print("Por favor, ingrese un número válido.")
+                    logging.error("Entrada inválida para el ciclo.")
+            elif opcion == "2":
+                mision = input("Ingrese el nombre de la misión de la cual eliminar el dispositivo: ")
+                dispositivo_a_eliminar = input("Ingrese el nombre del dispositivo a eliminar: ")
+                Config.eliminar_dispositivo(mision, dispositivo_a_eliminar)
+            elif opcion == "3":
+                mision = input("Ingrese el nombre de la misión para la cual agregar nuevo dispositivo: ")
+                nuevo_dispositivo = input("Ingrese el nombre del nuevo dispositivo: ")
+                Config.nuevo_dispositivo(mision, nuevo_dispositivo)  # Asegúrate de que este método esté implementado correctamente
+            elif opcion == "4":
+                cantidad_min_archivos:int = int(input ("Ingrese nueva cantidad minima de archivos a generar: "))
+                Config.cambiar_min_archivos(cantidad_min_archivos)  # Asegúrate de que este método esté implementado correctamente
+            elif opcion == "5":
+                cantidad_max_archivos:int = int(input ("Ingrese nueva cantidad máxima de archivos a generar: "))
+                Config.cambiar_max_archivos(cantidad_max_archivos)  # Asegúrate de que este método esté implementado correctamente
+            elif opcion == "6":
+                Config.Crear_copia()  # Asegúrate de que este método esté implementado correctamente
+                print("Copia creada con éxito")
+                logging.info("Copia de reporte creada.")
+            elif opcion == "7":
+                print("Continuando con la generación de archivos...")
+                logging.info("Continuando con la generación de archivos.")
+            else:
+                print("Opción errónea, inténtelo otra vez.")
+                logging.warning("Opción errónea seleccionada en el menú.")
