@@ -3,6 +3,7 @@ import random
 from tqdm import tqdm
 import time
 from typing import NoReturn
+import argparse
 
 # Importación de Clases y métodos
 from Archivos.Configuracion.Configuracion import Configuracion
@@ -22,6 +23,20 @@ procesador = Generador()
 
 
 def main() -> NoReturn:
+    parser = argparse.ArgumentParser(description='INGRESE LA OPCION QUE DESEA MODIFICAR.')
+    parser.add_argument('--ciclo', type=float, help='Ciclo de tiempo en segundos')
+    parser.add_argument('--min', type=float, help='Cambiar cantidad mínima de archivos a generar')
+    parser.add_argument('--max', type=float, help='Cambiar cantidad máxima de archivos a generar')
+    args = parser.parse_args()
+    if args.ciclo is not None:
+        config.cambiar_ciclo(args.ciclo)
+        print('ciclo cambiado')
+    elif args.min is not None:
+        config.cambiar_min_archivos(args.min)
+    elif args.max is not None:
+        config.cambiar_max_archivos(args.max)
+    else:
+        print("No se suministraron opciones")
 
 
     try:
