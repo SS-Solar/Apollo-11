@@ -1,7 +1,6 @@
 # Dependencias
 import yaml
 import os
-
 from typing import List
 from Archivos.Configuracion.Logger import Logger
 
@@ -146,23 +145,13 @@ class Configuracion():
 
 
     @staticmethod
-    def nuevo_dispositivo(mision: int, nuevo_dispositivo: str) -> None:
-        """Añade un duevo dispositivo segun la mision seleccionada, añadiendo
-        el dispositivo segun la entrada del segundo argumento
-
-        Args:
-            mision (int): Toma la mision dependiendo el numero de posicion de la mision.
-            nuevo_dispositivo (str): Cadena de texto que recibe el nombre del dispositivo
-            para añadirla al archimo YAML
-        """
+    def nuevo_dispositivo(mision: str, nuevo_dispositivo: str) -> None:
         try:
             data["settings"]["misiones"][mision]["dispositivos"].append(nuevo_dispositivo)
-            mision: str = data["settings"]["misiones"][mision]
-            logger.info("Dispositivo añadido correctamente a la mision " + mision)
+            logger.info(f"Dispositivo añadido correctamente a la misión {mision}")
             with open(ruta, "w") as archivo:
                 yaml.dump(data, archivo, default_flow_style=False)
             print(f'Se añadió el dispositivo {nuevo_dispositivo} correctamente a la misión {mision}')
-            logger.info(f'Se añadió el dispositivo {nuevo_dispositivo} correctamente a la misión {mision}')
         except Exception as e:
             logger.error(f"Se ha producido un error al ingresar un nuevo dispositivo: {e}")
 
@@ -183,6 +172,8 @@ class Configuracion():
         except Exception as e:
             print(f"el dispositivo seleccionado no existe para la misión {mision}")
             logger.error(f"Se ha producido un error al eliminar un nuevo dispositivo: {e}")
+
+
 
 
     @staticmethod
