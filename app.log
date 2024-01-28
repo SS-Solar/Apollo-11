@@ -4602,3 +4602,35 @@ AttributeError: 'Configuracion' object has no attribute 'Crear_copia'
 2024-01-28 15:19:32,649 - INFO - Listado de misiones Creado
 2024-01-28 15:19:32,649 - INFO - Archivos copiados y limpiados correctamente
 2024-01-28 15:19:32,649 - INFO - Programa terminado. Saliendo...
+2024-01-28 17:12:44,150 - INFO - Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2024-01-28 17:12:44,150 - INFO - NumExpr defaulting to 8 threads.
+2024-01-28 17:12:51,911 - INFO - Se han analizado correctamente los registros
+2024-01-28 17:12:51,911 - INFO - DataFrame creado correctamente
+2024-01-28 17:12:51,926 - INFO - Se ha generado correctamente la tabla de eventos
+2024-01-28 17:12:51,926 - INFO - Se han analizado correctamente los registros
+2024-01-28 17:12:51,926 - INFO - DataFrame creado correctamente
+2024-01-28 17:12:51,930 - INFO - Gestion de desconexiones generado correctamente
+2024-01-28 17:12:51,930 - INFO - Se han analizado correctamente los registros
+2024-01-28 17:12:51,930 - INFO - DataFrame creado correctamente
+2024-01-28 17:12:51,930 - ERROR - Se ha producido un error al generar las estadisticas de los dispositivos inoperables: division by zero
+2024-01-28 17:12:51,946 - INFO - Se ha mostrado el reporte correctamente en consola
+2024-01-28 17:12:52,054 - INFO - La carpeta 'c:\Users\isamo\OneDrive\Documentos\GitHub\Apollo-11\Archivos\Logs' se encuentra en: c:\Users\isamo\OneDrive\Documentos\GitHub\Apollo-11\Archivos\Reportes\Copias\Logs28012024171251
+2024-01-28 17:12:52,054 - INFO - Listado de misiones Creado
+2024-01-28 17:12:52,058 - INFO - Archivos copiados y limpiados correctamente
+2024-01-28 17:12:52,061 - INFO - Programa terminado. Saliendo...
+2024-01-28 17:20:19,906 - INFO - Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2024-01-28 17:20:19,906 - INFO - NumExpr defaulting to 8 threads.
+2024-01-28 17:20:30,308 - INFO - Se han analizado correctamente los registros
+2024-01-28 17:20:30,308 - INFO - DataFrame creado correctamente
+2024-01-28 17:20:30,308 - INFO - Se ha generado correctamente la tabla de eventos
+2024-01-28 17:20:30,308 - INFO - Se han analizado correctamente los registros
+2024-01-28 17:20:30,308 - INFO - DataFrame creado correctamente
+2024-01-28 17:20:30,308 - INFO - Gestion de desconexiones generado correctamente
+2024-01-28 17:20:30,308 - INFO - Se han analizado correctamente los registros
+2024-01-28 17:20:30,324 - INFO - DataFrame creado correctamente
+2024-01-28 17:20:30,324 - ERROR - Se ha producido un error al generar las estadisticas de los dispositivos inoperables: division by zero
+2024-01-28 17:20:30,332 - INFO - Se ha mostrado el reporte correctamente en consola
+2024-01-28 17:20:30,384 - INFO - La carpeta 'c:\Users\isamo\OneDrive\Documentos\GitHub\Apollo-11\Archivos\Logs' se encuentra en: c:\Users\isamo\OneDrive\Documentos\GitHub\Apollo-11\Archivos\Reportes\Copias\Logs28012024172030
+2024-01-28 17:20:30,384 - INFO - Listado de misiones Creado
+2024-01-28 17:20:30,384 - INFO - Archivos copiados y limpiados correctamente
+2024-01-28 17:20:30,384 - INFO - Programa terminado. Saliendo...
