@@ -76,10 +76,6 @@ class Interfaces:
             elif opcion == "5":
                 cantidad_max_archivos:int = int(input ("Ingrese nueva cantidad máxima de archivos a generar: "))
                 Config.cambiar_max_archivos(cantidad_max_archivos)
-            elif opcion == "6":
-                Config.Crear_copia()
-                print("Copia creada con éxito")
-                logging.info("Copia de reporte creada.")
             elif opcion == "7":
                 print("Continuando con la generación de archivos...")
                 logging.info("Continuando con la generación de archivos.")
