@@ -4586,3 +4586,19 @@ TypeError: Configuracion.nuevo_dispositivo() missing 2 required positional argum
     Config.Crear_copia()  # Asegúrate de que este método esté implementado correctamente
 AttributeError: 'Configuracion' object has no attribute 'Crear_copia'
 
+2024-01-28 15:19:16,720 - INFO - Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2024-01-28 15:19:16,720 - INFO - NumExpr defaulting to 8 threads.
+2024-01-28 15:19:32,584 - INFO - Se han analizado correctamente los registros
+2024-01-28 15:19:32,584 - INFO - DataFrame creado correctamente
+2024-01-28 15:19:32,589 - INFO - Se ha generado correctamente la tabla de eventos
+2024-01-28 15:19:32,589 - INFO - Se han analizado correctamente los registros
+2024-01-28 15:19:32,589 - INFO - DataFrame creado correctamente
+2024-01-28 15:19:32,589 - INFO - Gestion de desconexiones generado correctamente
+2024-01-28 15:19:32,589 - INFO - Se han analizado correctamente los registros
+2024-01-28 15:19:32,589 - INFO - DataFrame creado correctamente
+2024-01-28 15:19:32,589 - ERROR - Se ha producido un error al generar las estadisticas de los dispositivos inoperables: division by zero
+2024-01-28 15:19:32,628 - INFO - Se ha mostrado el reporte correctamente en consola
+2024-01-28 15:19:32,649 - INFO - La carpeta 'c:\Users\isamo\OneDrive\Documentos\GitHub\Apollo-11\Archivos\Logs' se encuentra en: c:\Users\isamo\OneDrive\Documentos\GitHub\Apollo-11\Archivos\Reportes\Copias\Logs28012024151932
+2024-01-28 15:19:32,649 - INFO - Listado de misiones Creado
+2024-01-28 15:19:32,649 - INFO - Archivos copiados y limpiados correctamente
+2024-01-28 15:19:32,649 - INFO - Programa terminado. Saliendo...

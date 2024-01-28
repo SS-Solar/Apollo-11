@@ -281,37 +281,57 @@ def test_cambiar_max_archivos(
 def test_nuevo_dispositivo(mock_configuracion, mock_logger, mock_yaml_data):
     mision_nombre = "ColonyMoon"
     nuevo_dispositivo = "NuevoDispositivo"
-    # Simula la adición del dispositivo en mock_yaml_data
     mock_yaml_data["settings"]["misiones"][mision_nombre]["dispositivos"].append(nuevo_dispositivo)
 
     with patch("Archivos.Configuracion.Configuracion.open", mock_open(), create=True) as mock_file:
         mock_configuracion.nuevo_dispositivo(mision_nombre, nuevo_dispositivo)
-        # Verifica que la función open se llamó correctamente.
         mock_file.assert_called_once_with(os.path.join(ruta_absoluta, 'config.yaml'), "w")
 
 
-
-
 # def test_eliminar_dispositivo(mock_configuracion, mock_logger, mock_yaml_data):
+#     mision_nombre = "ColonyMoon"
 #     dispositivo_a_eliminar = "DispositivoAEliminar"
+    
+#     mision_datos = mock_yaml_data["settings"]["misiones"][mision_nombre]
+#     if dispositivo_a_eliminar not in mision_datos["dispositivos"]:
+#         mision_datos["dispositivos"].append(dispositivo_a_eliminar)
 
-#     for mision_nombre, mision_datos in mock_yaml_data["settings"]["misiones"].items():
-#         # Asegúrate de que el dispositivo exista antes de intentar eliminarlo
-#         if dispositivo_a_eliminar not in mision_datos["dispositivos"]:
-#             mision_datos["dispositivos"].append(dispositivo_a_eliminar)
+#     with patch("builtins.open", mock_open(), create=True) as mock_file:
+#         mock_configuracion.eliminar_dispositivo(mision_nombre, dispositivo_a_eliminar)
+        
+#         mock_file.assert_called_once_with(os.path.join(ruta_absoluta, 'config.yaml'), "w")
+        
+#         assert dispositivo_a_eliminar not in mock_yaml_data["settings"]["misiones"][mision_nombre]["dispositivos"], \
+#             f"El dispositivo {dispositivo_a_eliminar} no fue eliminado de la misión {mision_nombre}"
 
-#         with patch("builtins.open", mock_open(), create=True) as mock_file:
-#             try:
-#                 # Llama a la función de eliminación de dispositivo
-#                 mock_configuracion.eliminar_dispositivo(mision_nombre, dispositivo_a_eliminar)
-#                 # Verifica que se llamó a la función open
-#                 mock_file.assert_called_once_with(ruta_config_yaml, "w")
-#                 # Verifica que el dispositivo fue eliminado
-#                 assert dispositivo_a_eliminar not in mision_datos["dispositivos"], f"El dispositivo {dispositivo_a_eliminar} no fue eliminado de la misión {mision_nombre}"
-#             except AssertionError as e:
-#                 # Maneja cualquier AssertionError que ocurra durante la prueba
-#                 print(f"Error en la prueba con la misión {mision_nombre}: {str(e)}")
-#                 raise e
+# def test_dispositivos_mision(mock_configuracion, mock_logger, mock_yaml_data):
+#     num_mision = 0  # Asumiendo que '0' corresponde a 'ColonyMoon'
+#     dispositivos_esperados = mock_yaml_data["settings"]["misiones"]["ColonyMoon"]["dispositivos"]
+
+#     with patch("configuracion.data", mock_yaml_data):
+#         dispositivos_resultantes = mock_configuracion.dispositivos_mision(num_mision)
+#         assert dispositivos_resultantes == dispositivos_esperados, "La lista de dispositivos no coincide."
+
+# def test_estado(mock_configuracion, mock_logger, mock_yaml_data):
+#     estados_esperados = mock_yaml_data["settings"]["estado_de_dispositivo"]
+
+#     with patch("configuracion.data", mock_yaml_data):
+#         estados_resultantes = mock_configuracion.estado()
+#         assert estados_resultantes == estados_esperados, "La lista de estados no coincide."
+
+# def test_cantidad_min_archivos(mock_configuracion, mock_logger, mock_yaml_data):
+#     cantidad_min_esperada = mock_yaml_data["settings"]["cantidad_min_archivos"]
+
+#     with patch("configuracion.data", mock_yaml_data):
+#         cantidad_min_resultante = mock_configuracion.cantidad_min_archivos()
+#         assert cantidad_min_resultante == cantidad_min_esperada, "La cantidad mínima de archivos no coincide."
+
+# def test_cantidad_max_archivos(mock_configuracion, mock_logger, mock_yaml_data):
+#     cantidad_max_esperada = mock_yaml_data["settings"]["cantidad_max_archivos"]
+
+#     with patch("configuracion.data", mock_yaml_data):
+#         cantidad_max_resultante = mock_configuracion.cantidad_max_archivos()
+#         assert cantidad_max_resultante == cantidad_max_esperada, "La cantidad máxima de archivos no coincide."
 
 
 
