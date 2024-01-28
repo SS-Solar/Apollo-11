@@ -15,7 +15,7 @@ from Archivos.Configuracion.Logger import Logger
 from Archivos.InterfazUsuario.Interfaces import Interfaces
 from Archivos.Procesador.Generador import Generador
 
-# configuración del logger
+"""configuración del logger"""
 logger = Logger
 config = Configuracion()
 menu = Interfaces()
@@ -42,7 +42,7 @@ def main() -> NoReturn:
         # Configurar y obtener parámetros
         menu.menu_inicial()
 
-        # Distribuir y ejecutar el proceso seleccionado
+        """Distribuir y ejecutar el proceso seleccionado"""
         while True:
             ciclo: float = config.ciclo()
             contador: int = 0

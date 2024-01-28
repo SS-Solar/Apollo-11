@@ -1,31 +1,30 @@
 import pytest
 import yaml
 import os
-
 from unittest.mock import Mock, patch, mock_open
 from Archivos.Configuracion.Configuracion import Configuracion
 from Archivos.Configuracion.Logger import Logger
 
-# Ruta al directorio donde se encuentra este script de pruebas.
-base_test_dir = os.path.dirname(os.path.abspath(__file__))
+"""Ruta al directorio donde se encuentra este script de pruebas."""
+base_test_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# Ruta al archivo config.yaml, asumiendo que se encuentra en
-ruta_config_yaml = os.path.join(base_test_dir, "..", "Archivos", "Configuracion", "config.yaml")
-ruta_config_yaml = os.path.normpath(ruta_config_yaml)
+"""Ruta al directorio donde reside configuracion.py. """
+ruta_absoluta = os.path.join(base_test_dir, "Archivos", "Configuracion")
 
-# Ruta al archivo configuracion.py, asumiendo que se encuentra en
-ruta_configuracion_py = os.path.join(base_test_dir, "..", "Archivos", "Configuracion", "configuracion.py")
-ruta_configuracion_py = os.path.normpath(ruta_configuracion_py)
+"""Ruta que se usará en las aserciones de los tests"""
+ruta_config_yaml = os.path.join(ruta_absoluta, 'config.yaml')
 
 
-# Fixture para el logger
+
+
+"""Fixture para el logger"""
 @pytest.fixture
 def mock_logger():
     logger = Mock(spec=Logger)
     return logger
 
 
-# Fixture para cargar datos YAML de prueba
+"""Fixture para cargar datos YAML de prueba"""
 @pytest.fixture
 def mock_yaml_data():
     return {
@@ -131,7 +130,16 @@ def mock_yaml_data():
 
 @pytest.fixture
 def mock_open_yaml():
-    # Usar directamente mock_yaml_data en lugar de yaml.dump(mock_yaml_data)
+    """
+    Fixture de pytest para simular la apertura y lectura de un archivo YAML.
+    
+    Utiliza `mock_open` para crear un objeto mock que devuelve una cadena YAML
+    serializada de `mock_yaml_data` cuando se llama a `open`. Este enfoque permite
+    probar funciones que leen archivos sin acceder al sistema de archivos real.
+    
+    Devuelve:
+        Objeto MagicMock que simula la función `open`.
+    """
     with patch(
         "builtins.open", mock_open(read_data=yaml.dump(mock_yaml_data))
     ) as mock_file:
@@ -140,13 +148,24 @@ def mock_open_yaml():
 
 @pytest.fixture
 def mock_configuracion(mock_open_yaml, mock_logger):
+    """
+    Proporciona una versión mockeada de la clase Configuracion para pruebas, con sus
+    dependencias 'yaml.safe_load' y 'Logger' también mockeadas.
+    
+    Args:
+        mock_open_yaml (fixture): Mock para la función 'open'.
+        mock_logger (fixture): Mock para el Logger.
+
+    Yields:
+        Configuracion: Instancia mockeada de la clase Configuracion.
+    """
     with patch("yaml.safe_load", return_value=mock_yaml_data), patch(
         "Archivos.Configuracion.Configuracion.Logger", mock_logger
     ):
         yield Configuracion()
 
 
-# Test para Configuracion.misiones
+"""Test para Configuracion.misiones"""
 def test_misiones_success(mock_configuracion):
     expected_misiones = [
         "ColonyMoon",
@@ -176,7 +195,7 @@ def test_misiones_success(mock_configuracion):
 #         mock_logger.error.assert_called_once_with("Se ha producido un error en la generacion de misiones: Error de prueba")
 
 
-# Test para Configuracion.nombres_abreviados
+"""Test para Configuracion.nombres_abreviados"""
 def test_nombres_abreviados_success(mock_configuracion):
     expected_abreviados = ["CLNM", "GALXTWO", "NN", "ORBONE", "UNKW", "VMRS"]
     assert (
@@ -184,7 +203,7 @@ def test_nombres_abreviados_success(mock_configuracion):
     ), "Debería devolver nombres abreviados correctos"
 
 
-# Test para Configuracion.estado
+"""Test para Configuracion.estado"""
 def test_estado_success(mock_configuracion):
     expected_estados_de_dispositivos = [
         "Excelent",
@@ -198,23 +217,24 @@ def test_estado_success(mock_configuracion):
         mock_configuracion.estado() == expected_estados_de_dispositivos
     ), "Debería devolver la lista de estados de dispositivos"
 
-
+"""Test para ver dispositivos"""
 def test_dispositivos(mock_configuracion, mock_logger, mock_yaml_data):
     with patch("builtins.print") as mock_print:
         mock_configuracion.dispositivos()
-        # +1 por la impresión del nombre de la misión
+        """
+        +1 por la impresión del nombre de la misión
         # +1 por la impresión de "Dispositivos: "
         # +len(dispositivos) por cada misión
+        """
         cantidad_esperada = sum(
             2 + len(detalles["dispositivos"])
             for detalles in mock_yaml_data["settings"]["misiones"].values()
         )
-
         assert (
             mock_print.call_count == cantidad_esperada
         ), f"Se esperaban {cantidad_esperada} llamadas a print, pero se encontraron {mock_print.call_count}."
 
-
+"""Test para ciclo"""
 def test_ciclo(mock_configuracion, mock_yaml_data):
     with patch("builtins.print") as mock_print:
         resultado = mock_configuracion.ciclo()
@@ -225,38 +245,39 @@ def test_ciclo(mock_configuracion, mock_yaml_data):
             resultado == mock_yaml_data["settings"]["ciclo_simulacion"]
         ), "Debería devolver el ciclo de iteración correcto"
 
-
+"""Test para cambiar_ciclo"""
 def test_cambiar_ciclo(mock_configuracion, mock_yaml_data):
     nuevo_ciclo = 10.0
     with patch(
         "builtins.open", mock_open(read_data=yaml.dump(mock_yaml_data)), create=True
     ) as mock_file:
         mock_configuracion.cambiar_ciclo(nuevo_ciclo)
-        mock_file.assert_called_once_with(ruta_config_yaml, "w")
+        mock_file.assert_called_once_with(os.path.join(ruta_absoluta, 'config.yaml'), "w")
 
 
+"""Test para cambiar_min_archivos"""
 def test_cambiar_min_archivos(
     mock_configuracion, mock_logger, mock_open_yaml, mock_yaml_data
 ):
     min_archivos_nuevo = 5
     with patch("builtins.open", mock_open(), create=True) as mock_file:
         mock_configuracion.cambiar_min_archivos(min_archivos_nuevo)
-        mock_file.assert_called_once_with(ruta_config_yaml, "w")
-        # Asumimos que la función real cambia el valor en el diccionario correctamente.
-        # En una prueba unitaria, normalmente no se probarían los efectos secundarios directamente.
+        mock_file.assert_called_once_with(os.path.join(ruta_absoluta, 'config.yaml'), "w")
 
 
+
+"""Test para cambiar_max_archivos"""
 def test_cambiar_max_archivos(
     mock_configuracion, mock_logger, mock_open_yaml, mock_yaml_data
 ):
     max_archivos_nuevo = 200
     with patch("builtins.open", mock_open(), create=True) as mock_file:
         mock_configuracion.cambiar_max_archivos(max_archivos_nuevo)
-        mock_file.assert_called_once_with(ruta_config_yaml, "w")
-        # Asumimos que la función real cambia el valor en el diccionario correctamente.
-        # En una prueba unitaria, normalmente no se probarían los efectos secundarios directamente.
+        mock_file.assert_called_once_with(os.path.join(ruta_absoluta, 'config.yaml'), "w")
 
 
+
+"""Test para nuevo_dispositivo"""
 def test_nuevo_dispositivo(mock_configuracion, mock_logger, mock_yaml_data):
     mision_nombre = "ColonyMoon"
     nuevo_dispositivo = "NuevoDispositivo"
@@ -266,7 +287,9 @@ def test_nuevo_dispositivo(mock_configuracion, mock_logger, mock_yaml_data):
     with patch("Archivos.Configuracion.Configuracion.open", mock_open(), create=True) as mock_file:
         mock_configuracion.nuevo_dispositivo(mision_nombre, nuevo_dispositivo)
         # Verifica que la función open se llamó correctamente.
-        mock_file.assert_called_once_with(ruta_config_yaml, "w")
+        mock_file.assert_called_once_with(os.path.join(ruta_absoluta, 'config.yaml'), "w")
+
+
 
 
 # def test_eliminar_dispositivo(mock_configuracion, mock_logger, mock_yaml_data):

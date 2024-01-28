@@ -14,14 +14,14 @@ class Interfaces:
 
     @staticmethod
     def bienvenido() -> None:
-        print("Dentro de Interfaces.bienvenido()")  # Para depuración
+        print("Dentro de Interfaces.bienvenido()")
     mensaje: str = "Bienvenido A"
     arte: any = text2art(mensaje, font="")
     print(arte)
 
     @staticmethod
     def apollo11() -> None:
-        print("Dentro de Interfaces.apollo11()")  # Para depuración
+        print("Dentro de Interfaces.apollo11()")
     mensaje: str = "APOLLO-11"
     arte: any = text2art(mensaje, font="")
     print(arte)
@@ -51,7 +51,7 @@ class Interfaces:
         Config.ciclo()
         nombre = input(" ¿DESEA CONTINUAR CON LOS ANTERIORES DATOS? [y/n]: ")
         if nombre.lower() == "n":
-            opcion = ""  # Inicializa opción como cadena vacía
+            opcion = ""  """Inicializa opción como cadena vacía"""
         while opcion != "7":
             opcion = input("Que información desea cambiar?\n 1. Ciclo de tiempo (s)\n 2. Eliminar Dispositivos \n 3. Añadir un nuevo dispositivo \n 4. Cambiar cantidad mínima de archivos a generar \n 5. Cambiar cantidad máxima de archivos a generar \n 6. Crear copia del último reporte disponible \n 7. Seguir a la generación de archivos \n")
             if opcion == "1":
@@ -69,15 +69,15 @@ class Interfaces:
             elif opcion == "3":
                 mision = input("Ingrese el nombre de la misión para la cual agregar nuevo dispositivo: ")
                 nuevo_dispositivo = input("Ingrese el nombre del nuevo dispositivo: ")
-                Config.nuevo_dispositivo(mision, nuevo_dispositivo)  # Asegúrate de que este método esté implementado correctamente
+                Config.nuevo_dispositivo(mision, nuevo_dispositivo)
             elif opcion == "4":
                 cantidad_min_archivos:int = int(input ("Ingrese nueva cantidad minima de archivos a generar: "))
-                Config.cambiar_min_archivos(cantidad_min_archivos)  # Asegúrate de que este método esté implementado correctamente
+                Config.cambiar_min_archivos(cantidad_min_archivos)
             elif opcion == "5":
                 cantidad_max_archivos:int = int(input ("Ingrese nueva cantidad máxima de archivos a generar: "))
-                Config.cambiar_max_archivos(cantidad_max_archivos)  # Asegúrate de que este método esté implementado correctamente
+                Config.cambiar_max_archivos(cantidad_max_archivos)
             elif opcion == "6":
-                Config.Crear_copia()  # Asegúrate de que este método esté implementado correctamente
+                Config.Crear_copia()
                 print("Copia creada con éxito")
                 logging.info("Copia de reporte creada.")
             elif opcion == "7":
