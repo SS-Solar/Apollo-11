@@ -2,9 +2,9 @@ import logging
 import os
 from art import text2art
 from typing import List 
-#import Archivos.Configuracion.Configuracion as Config
 from Archivos.Configuracion.Configuracion import Configuracion
 import argparse
+from Archivos.Configuracion.Logger import Logger
 
 Config = Configuracion()
 
@@ -39,46 +39,64 @@ class Interfaces:
                 ultimo_archivo = archivos[-1]
                 with open(os.path.join(carpeta, ultimo_archivo), 'r') as file:
                     contenido:str = file.read()
-                logging.info("Se ha mostrado el reporte correctamente en consola")
+                Logger.info("Se ha mostrado el reporte correctamente en consola")
             else:
-                logging.warning("La carpeta está vacía o no contiene archivos.")
+                Logger.warning("La carpeta está vacía o no contiene archivos.")
             print(contenido)
         except Exception as e:
-            logging.error("Error al mostrar el reporte", exc_info=True)
+            Logger.error("Error al mostrar el reporte", exc_info=True)
 
     @staticmethod
     def menu_inicial() -> None:
-        Config.ciclo()
-        nombre = input(" ¿DESEA CONTINUAR CON LOS ANTERIORES DATOS? [y/n]: ")
-        if nombre.lower() == "n":
-            opcion = ""  """Inicializa opción como cadena vacía"""
-        while opcion != "7":
-            opcion = input("Que información desea cambiar?\n 1. Ciclo de tiempo (s)\n 2. Eliminar Dispositivos \n 3. Añadir un nuevo dispositivo \n 4. Cambiar cantidad mínima de archivos a generar \n 5. Cambiar cantidad máxima de archivos a generar \n 6. Crear copia del último reporte disponible \n 7. Seguir a la generación de archivos \n")
-            if opcion == "1":
-                ciclo = input("Ingrese nuevo ciclo de tiempo: ")
-                try:
-                    Config.cambiar_ciclo(float(ciclo))
-                    logging.info(f"Ciclo cambiado a {ciclo}")
-                except ValueError:
-                    print("Por favor, ingrese un número válido.")
-                    logging.error("Entrada inválida para el ciclo.")
-            elif opcion == "2":
-                mision = input("Ingrese el nombre de la misión de la cual eliminar el dispositivo: ")
-                dispositivo_a_eliminar = input("Ingrese el nombre del dispositivo a eliminar: ")
-                Config.eliminar_dispositivo(mision, dispositivo_a_eliminar)
-            elif opcion == "3":
-                mision = input("Ingrese el nombre de la misión para la cual agregar nuevo dispositivo: ")
-                nuevo_dispositivo = input("Ingrese el nombre del nuevo dispositivo: ")
-                Config.nuevo_dispositivo(mision, nuevo_dispositivo)
-            elif opcion == "4":
-                cantidad_min_archivos:int = int(input ("Ingrese nueva cantidad minima de archivos a generar: "))
-                Config.cambiar_min_archivos(cantidad_min_archivos)
-            elif opcion == "5":
-                cantidad_max_archivos:int = int(input ("Ingrese nueva cantidad máxima de archivos a generar: "))
-                Config.cambiar_max_archivos(cantidad_max_archivos)
-            elif opcion == "7":
-                print("Continuando con la generación de archivos...")
-                logging.info("Continuando con la generación de archivos.")
-            else:
-                print("Opción errónea, inténtelo otra vez.")
-                logging.warning("Opción errónea seleccionada en el menú.")
+        try:
+            Interfaces.bienvenido()
+            Interfaces.apollo11()
+            Config.dispositivos()
+            Config.ciclo()
+            nombre= input (" ¿DESEA CONTINUAR CON LOS ANTERIORES DATOS? [y/n]: ")
+            if (nombre == "n"):
+                    opcion = 0
+                    while ( not (opcion == 6)):
+                        opcion = input ("Que informacióm desea cambiar?\n 1. Ciclo de  tiempo (s)\n 2. Eliminar Dispositivos \n 3. Añadir un nuevo dispositivo \n 4. Cambiar cantidad minima de archivos a generar \n 5. Cambiar cantidad maxima de archivos a generar \n 6. Seguir con la generacion de archivos\n" )
+                        if opcion=="1":
+                            ciclo:int = input("Ingrese nuevo ciclo de tiempo: ")
+                            Config.cambiar_ciclo(float(ciclo))
+                        elif opcion=="2":
+                            misiones = Config.misiones()
+                            print("A que mision desea eliminar un dispositivo?")
+                            for i,y in enumerate(misiones):
+                                print(f"{i+1}. {y}")
+                            mision:int = int(input ("Ingrese opcion de misión de donde desea eliminar el dispositivo: "))
+                            
+                            dispositivos = Config.dispositivos_mision(mision-1)
+                            print("¿Cuál dispositivo desea eliminar?")
+                            for j,k in enumerate(dispositivos):
+                                print(f"{j+1}. {k}")
+                            dispositivo:int = int(input("Ingrese opcion del dispositivo que desea eliminar: "))
+                            Config.eliminar_dispositivo(misiones[mision-1],dispositivo-1)
+                            #Config.cambiar_ciclo(float(ciclo))
+                            #Eliminar dispositvo de mision especifica
+                        elif opcion=="3":
+                            #mision = int(input ("A que mision dese añadir un dispositivo?\n 1. ColonyMoon \n 2. GalaxyTwo \n 3. OrbitOne \n 4. VacMars\n"))
+                            misiones = Config.misiones()
+                            print("A que mision desea añadir un dispositivo?")
+                            for i,y in enumerate(misiones):
+                                print(f"{i+1}. {y}")
+                            mision = int(input("(ingrese un número de opción): "))
+                            dispositivo = input (" Ingrese el nombre del nuevo dispositivo:  ")
+                            #mision_aux = Config.misiones() 
+                            mision = misiones[mision-1]
+                            Config.nuevo_dispositivo (mision,dispositivo)
+                        elif opcion=="4":
+                            cantidad_min_archivos:int = int(input ("Ingrese nueva cantidad minima de archivos a generar: "))
+                            Config.cambiar_min_archivos(cantidad_min_archivos)
+                        elif opcion=="5":
+                            cantidad_max_archivos:int = int(input ("Ingrese nueva cantidad maxima de archivos a generar: "))
+                            Config.cambiar_max_archivos(cantidad_max_archivos)
+                        elif opcion=="6":
+                            break
+                        else: 
+                            print("Opcion erronea, intentalo otra vez")
+            Logger.info("Se desplego correctamente el menu")
+        except Exception as e:
+            Logger.error("Error en mostrar el menu")

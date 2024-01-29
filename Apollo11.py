@@ -7,10 +7,6 @@ import argparse
 
 # Importación de Clases y métodos
 from Archivos.Configuracion.Configuracion import Configuracion
-#import Archivos.Configuracion.Configuracion as Configuracion
-#import Archivos.Interfaz_Usuario.Interfaces as Menu
-#import Archivos.Procesador.Generador as Procesador
-#import Archivos.Procesador.Copia as Copia
 from Archivos.Configuracion.Logger import Logger
 from Archivos.InterfazUsuario.Interfaces import Interfaces
 from Archivos.Procesador.Generador import Generador
@@ -37,8 +33,7 @@ def main() -> NoReturn:
             config.cambiar_min_archivos(args.min)
         elif args.max is not None:
             config.cambiar_max_archivos(args.max)
-        else:
-            print("No se suministraron opciones")
+
         # Configurar y obtener parámetros
         menu.menu_inicial()
 

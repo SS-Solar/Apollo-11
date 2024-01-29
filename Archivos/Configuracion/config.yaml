@@ -1,7 +1,7 @@
 settings:
-  cantidad_max_archivos: 200
-  cantidad_min_archivos: 5
-  ciclo_simulacion: 20.0
+  cantidad_max_archivos: 100
+  cantidad_min_archivos: 0
+  ciclo_simulacion: 30.0
   estado_de_dispositivo:
   - Excelent
   - Good
@@ -26,7 +26,6 @@ settings:
       - CM-PRR-PQM
       - CM-PRR-PS
       - CM-PRR-PSW
-      - CM-KSS-ASS
       nombreAbreviado: CLNM
     GalaxyTwo:
       dispositivos:
@@ -48,6 +47,7 @@ settings:
     NUEVO:
       dispositivos:
       - Solo
+      - NN-MS-NS
       nombreAbreviado: NN
     OrbitOne:
       dispositivos:

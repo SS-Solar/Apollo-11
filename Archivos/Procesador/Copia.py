@@ -2,7 +2,6 @@ import shutil
 import os
 from datetime import datetime
 from typing import List
-#import Archivos.Configuracion.Configuracion as Config
 from Archivos.Configuracion.Configuracion import Configuracion
 from Archivos.Configuracion.Logger import Logger
 

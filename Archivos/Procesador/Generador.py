@@ -1,6 +1,5 @@
 import json
 from datetime import datetime
-#import Archivos.Configuracion.Configuracion as Config
 from Archivos.Configuracion.Configuracion import Configuracion
 from Archivos.Procesador.Analisis import Analisis
 import random
