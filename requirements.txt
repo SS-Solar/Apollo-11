@@ -3,3 +3,4 @@ art== 6.1
 tqdm==4.65.0
 pandas==2.0.3
 poetry==1.7.1
+pytest==7.4.0
