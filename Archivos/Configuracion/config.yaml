@@ -1,7 +1,7 @@
 settings:
-  cantidad_max_archivos: 100
+  cantidad_max_archivos: 50
   cantidad_min_archivos: 0
-  ciclo_simulacion: 30.0
+  ciclo_simulacion: 10.0
   estado_de_dispositivo:
   - Excelent
   - Good
@@ -12,7 +12,6 @@ settings:
   misiones:
     ColonyMoon:
       dispositivos:
-      - CM-ASC-PQM
       - CM-ASC-CD
       - CM-ASC-SPS
       - CM-S-EFAC
@@ -26,6 +25,7 @@ settings:
       - CM-PRR-PQM
       - CM-PRR-PS
       - CM-PRR-PSW
+      - CM-HH-PQ
       nombreAbreviado: CLNM
     GalaxyTwo:
       dispositivos:

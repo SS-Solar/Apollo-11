@@ -1,0 +1,15 @@
+conda create --name apollo11 python=3.11.5
+conda activate apollo11
+ctrl+shift+p
+python:select python environment
+seleccionar el entorno creado
+matar terminales que esten ejecutandose
+correr terminal
+install poetry
+listo
+
+
+
+
+conda list --export > conda_dependencies.txt
+pip install -r requirements.txt

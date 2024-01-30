@@ -18,7 +18,7 @@ with open(ruta, "r") as file:
 
 logger = Logger
 
-class Configuracion():
+class Configuracion:
 
 
     @staticmethod
